@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/molecules/Header';
 import CardGrid from '../components/organisms/CardGrid';
-import ExpandedCard from '../components/molecules/ExpandedCard';
 
 // Import images for specific patterns
 import defaultBg from '../assets/background.png';
@@ -75,13 +74,14 @@ const patterns = [
 
 export default function HomePage() {
   const [search, setSearch] = useState('');
-  const [expandedCard, setExpandedCard] = useState(null);
+  const [activeCards, setActiveCards] = useState([]);
   const navigate = useNavigate();
   
   const filtered = patterns.filter(p => p.name.toLowerCase().includes(search.toLowerCase()));
   
   const handleCardClick = (pattern) => {
-    setExpandedCard({
+    // Create expanded card data
+    const expandedCardData = {
       ...pattern,
       companies: ['Google', 'Microsoft', 'Amazon', 'Facebook', 'Apple'],
       rating: 4,
@@ -90,14 +90,29 @@ export default function HomePage() {
       nextTrack: {
         name: 'Advanced Problem Solving'
       }
-    });
+    };
+    
+    // Check if card is already active
+    const existingIndex = activeCards.findIndex(card => card.id === pattern.id);
+    
+    if (existingIndex >= 0) {
+      // Move to first position if already active
+      const updatedCards = [...activeCards];
+      const [existingCard] = updatedCards.splice(existingIndex, 1);
+      updatedCards.unshift(existingCard);
+      setActiveCards(updatedCards);
+    } else {
+      // Add to beginning of active cards
+      setActiveCards([expandedCardData, ...activeCards]);
+    }
   };
   
-  const handleContinue = () => {
-    if (expandedCard) {
-      navigate(`/track/${expandedCard.id}`);
-    }
-    setExpandedCard(null);
+  const handleContinue = (card) => {
+    navigate(`/track/${card.id}`);
+  };
+  
+  const handleCloseCard = (cardId) => {
+    setActiveCards(activeCards.filter(card => card.id !== cardId));
   };
 
   return (
@@ -111,15 +126,10 @@ export default function HomePage() {
       <CardGrid 
         items={filtered} 
         onCardClick={handleCardClick}
+        activeCards={activeCards}
+        onContinue={handleContinue}
+        onCloseCard={handleCloseCard}
       />
-      
-      {expandedCard && (
-        <ExpandedCard
-          {...expandedCard}
-          onClose={() => setExpandedCard(null)}
-          onContinue={handleContinue}
-        />
-      )}
     </div>
   );
 }
