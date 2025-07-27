@@ -68,7 +68,7 @@ export default function CodeAttemptPage({
       <div className="code-header">
         <div className="header-left">
           <Button 
-            variant="secondary" 
+            variant="minimal" 
             onClick={onBack}
             className="back-btn"
           >
@@ -85,11 +85,11 @@ export default function CodeAttemptPage({
         </div>
         
         <div className="header-actions">
-          <Button variant="secondary" onClick={handleRun}>
+          <Button variant="minimal" onClick={handleRun}>
             <Icon name="FaPlay" size={14} />
             Run
           </Button>
-          <Button variant="primary" onClick={onSubmit}>
+          <Button variant="minimal" onClick={onSubmit}>
             <Icon name="FaCheck" size={14} />
             Submit
           </Button>

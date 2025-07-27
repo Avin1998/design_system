@@ -58,7 +58,7 @@ export default function ExpandedCard({
                 <h4>Next Track:</h4>
                 <div className="next-track-details">
                   <span className="next-track-name">{nextTrack.name}</span>
-                  <Button variant="primary" onClick={onContinue}>
+                  <Button variant="minimal" onClick={onContinue}>
                     Continue
                   </Button>
                 </div>

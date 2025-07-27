@@ -62,7 +62,7 @@ export default function ExpandedCardInline({
               <h4>Next Track:</h4>
               <div className="next-track-details-inline">
                 <span className="next-track-name-inline">{nextTrack.name}</span>
-                <Button variant="primary" glow onClick={onContinue}>
+                <Button variant="minimal" onClick={onContinue}>
                   Continue
                 </Button>
               </div>

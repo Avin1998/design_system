@@ -72,7 +72,7 @@ export default function TrackDetailView({
     <div className="track-detail-view" {...props}>
       <div className="track-header">
         <Button 
-          variant="secondary" 
+          variant="minimal" 
           onClick={onBack}
           className="back-btn"
         >

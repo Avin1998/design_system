@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Icon from '../atoms/Icon';
-import Button from '../atoms/Button';
 import ProfileMenu from '../molecules/ProfileMenu';
 import './TopNavBar.css';
 
@@ -44,15 +43,18 @@ export default function TopNavBar({
         
         <nav className="nav-buttons">
           {navigationButtons.map(button => (
-            <Button
+            <a
               key={button.id}
-              variant="secondary"
-              className="nav-button"
-              onClick={() => handleNavClick(button.id)}
+              href="#"
+              className="nav-link"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(button.id);
+              }}
             >
               <Icon name={button.icon} size={16} />
               {button.label}
-            </Button>
+            </a>
           ))}
         </nav>
       </div>

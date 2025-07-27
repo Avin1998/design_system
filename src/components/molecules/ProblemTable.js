@@ -47,13 +47,13 @@ export default function ProblemTable({ problems = [], onAttempt, ...props }) {
               </td>
               <td>
                 {problem.completed ? (
-                  <Button variant="secondary" className="review-btn">
+                  <Button variant="minimal" className="review-btn">
                     <Icon name="FaEye" size={14} />
                     Review
                   </Button>
                 ) : (
                   <Button 
-                    variant="primary" 
+                    variant="minimal" 
                     onClick={() => onAttempt?.(problem)}
                     className="attempt-btn"
                   >
