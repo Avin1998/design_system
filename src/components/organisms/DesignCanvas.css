@@ -105,8 +105,12 @@
 }
 
 .connections-layer {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.connections-layer .connection-line {
   pointer-events: auto;
-  z-index: 5;
 }
 
 .connection-indicator {

@@ -25,6 +25,7 @@ export default function RequirementQuestion({
         onChange={onChange}
         rows={6}
         maxLength={2000}
+        enableSpeechToText={true}
       />
       
       <HintDisplay hint={hint} />

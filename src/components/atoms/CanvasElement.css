@@ -24,7 +24,7 @@
 .canvas-element.selected {
   border-color: var(--element-color, #4f9cf9);
   box-shadow: 0 0 0 2px rgba(79, 156, 249, 0.3);
-  z-index: 2;
+  z-index: 20;
 }
 
 .element-icon {
@@ -52,6 +52,7 @@
   opacity: 0;
   transform: translateY(-4px);
   transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .canvas-element.selected .element-actions {
