@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { FiArrowLeft, FiSave, FiPlay, FiUpload, FiLock } from 'react-icons/fi';
+import { FiArrowLeft, FiSave, FiPlay, FiUpload } from 'react-icons/fi';
 import Button from '../components/atoms/Button';
+import ProBadge from '../components/atoms/ProBadge';
 import ComponentPalette from '../components/molecules/ComponentPalette';
 import DesignCanvas from '../components/organisms/DesignCanvas';
 import { systemDesignTracks } from '../data/systemDesignTracks';
@@ -11,6 +12,7 @@ export default function SystemDesignCanvasPage() {
   const { trackId } = useParams();
   const navigate = useNavigate();
   const [canvasElements, setCanvasElements] = useState([]);
+  const [connections, setConnections] = useState([]);
   const [isProUser, setIsProUser] = useState(false); // Mock pro status
 
   const track = systemDesignTracks.find(t => t.id === trackId);
@@ -18,11 +20,21 @@ export default function SystemDesignCanvasPage() {
   useEffect(() => {
     // Load saved canvas state if exists
     const savedCanvas = localStorage.getItem(`canvas_${trackId}`);
+    const savedConnections = localStorage.getItem(`connections_${trackId}`);
+    
     if (savedCanvas) {
       try {
         setCanvasElements(JSON.parse(savedCanvas));
       } catch (error) {
         console.error('Failed to load saved canvas:', error);
+      }
+    }
+    
+    if (savedConnections) {
+      try {
+        setConnections(JSON.parse(savedConnections));
+      } catch (error) {
+        console.error('Failed to load saved connections:', error);
       }
     }
   }, [trackId]);
@@ -49,8 +61,17 @@ export default function SystemDesignCanvasPage() {
     );
   };
 
+  const handleConnectionAdd = (connection) => {
+    setConnections(prev => [...prev, connection]);
+  };
+
+  const handleConnectionDelete = (connectionId) => {
+    setConnections(prev => prev.filter(conn => conn.id !== connectionId));
+  };
+
   const handleSave = () => {
     localStorage.setItem(`canvas_${trackId}`, JSON.stringify(canvasElements));
+    localStorage.setItem(`connections_${trackId}`, JSON.stringify(connections));
     alert('Design saved successfully!');
   };
 
@@ -122,15 +143,17 @@ export default function SystemDesignCanvasPage() {
             Save
           </Button>
           
-          <Button 
-            variant={isProUser ? "secondary" : "secondary"} 
-            onClick={handleSimulate}
-            className={`action-button ${!isProUser ? 'pro-feature' : ''}`}
-          >
-            {!isProUser && <FiLock className="pro-icon" />}
-            <FiPlay />
-            Simulate
-          </Button>
+          <div className="simulate-button-container">
+            <Button 
+              variant="secondary" 
+              onClick={handleSimulate}
+              className="action-button"
+            >
+              <FiPlay />
+              Simulate
+            </Button>
+            {!isProUser && <ProBadge />}
+          </div>
           
           <Button 
             variant="primary" 
@@ -151,11 +174,14 @@ export default function SystemDesignCanvasPage() {
         <div className="canvas-area">
           <DesignCanvas
             elements={canvasElements}
+            connections={connections}
             onElementAdd={handleElementAdd}
             onElementDelete={handleElementDelete}
             onElementMove={handleElementMove}
             onElementEdit={(id) => handleProFeature('Advanced Element Editing')}
-            onElementConnect={(id) => handleProFeature('Component Connection')}
+            onElementConnect={() => {}} // Connection is now built into the canvas
+            onConnectionAdd={handleConnectionAdd}
+            onConnectionDelete={handleConnectionDelete}
           />
         </div>
       </div>

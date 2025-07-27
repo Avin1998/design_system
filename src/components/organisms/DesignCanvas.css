@@ -94,3 +94,41 @@
     font-size: 36px;
   }
 }
+
+/* Connection mode styles */
+.design-canvas.connecting-mode {
+  cursor: crosshair;
+}
+
+.design-canvas.connecting-mode .canvas-element {
+  cursor: crosshair;
+}
+
+.connections-layer {
+  pointer-events: auto;
+  z-index: 5;
+}
+
+.connection-indicator {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(79, 156, 249, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.connection-indicator p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.connection-indicator p:first-child {
+  margin-bottom: 4px;
+}

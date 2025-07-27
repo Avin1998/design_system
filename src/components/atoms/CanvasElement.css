@@ -87,3 +87,19 @@
 .element-action.delete:hover {
   background: #ff6b6b;
 }
+
+/* Connection mode styles */
+.canvas-element.connecting {
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+  animation: connectingPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes connectingPulse {
+  0% {
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 6px rgba(255, 215, 0, 0.8);
+  }
+}

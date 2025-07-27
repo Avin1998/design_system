@@ -94,6 +94,11 @@
   opacity: 0.7;
 }
 
+.simulate-button-container {
+  position: relative;
+  display: inline-block;
+}
+
 .canvas-workspace {
   display: flex;
   flex: 1;

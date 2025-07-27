@@ -8,6 +8,7 @@ export default function CanvasElement({
   onEdit, 
   onConnect,
   isSelected,
+  isConnecting = false,
   onSelect,
   position,
   onPositionChange,
@@ -56,7 +57,7 @@ export default function CanvasElement({
 
   return (
     <div
-      className={`canvas-element ${isSelected ? 'selected' : ''} ${className}`}
+      className={`canvas-element ${isSelected ? 'selected' : ''} ${isConnecting ? 'connecting' : ''} ${className}`}
       style={{
         left: position.x,
         top: position.y,
