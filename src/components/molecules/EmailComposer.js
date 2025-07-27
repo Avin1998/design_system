@@ -77,106 +77,122 @@ export default function EmailComposer({
 
   return (
     <div className={`email-composer ${className}`}>
-      <div className="composer-header">
-        <h2 className="composer-title">Compose Email</h2>
-        
+      <div className="composer-layout">
+        {/* Sidebar with templates */}
         {templates && templates.length > 0 && (
-          <div className="templates-section">
-            <h3 className="templates-title">Templates</h3>
-            <div className="templates-grid">
+          <div className="templates-sidebar">
+            <div className="sidebar-header">
+              <h3 className="templates-title">Quick Templates</h3>
+              <p className="templates-subtitle">Click to use</p>
+            </div>
+            <div className="templates-list">
               {templates.map((template, index) => (
                 <button
                   key={index}
-                  className="template-btn"
+                  className="template-card"
                   onClick={() => handleTemplateSelect(template)}
                 >
-                  <span className="template-name">{template.name}</span>
-                  <span className="template-preview">{template.subject}</span>
+                  <div className="template-icon">📧</div>
+                  <div className="template-info">
+                    <span className="template-name">{template.name}</span>
+                    <span className="template-preview">{template.subject}</span>
+                  </div>
                 </button>
               ))}
             </div>
           </div>
         )}
-      </div>
 
-      <div className="composer-form">
-        <div className="form-row">
-          <Input
-            label="From"
-            value={formData.from}
-            onChange={(e) => handleInputChange('from', e.target.value)}
-            disabled
-            className="from-input"
-          />
-        </div>
-
-        <div className="form-row">
-          <Input
-            label="To"
-            value={formData.to}
-            onChange={(e) => handleInputChange('to', e.target.value)}
-            placeholder="recipient@example.com"
-            className="to-input"
-          />
-        </div>
-
-        <div className="form-row">
-          <Input
-            label="Subject"
-            value={formData.subject}
-            onChange={(e) => handleInputChange('subject', e.target.value)}
-            placeholder="Enter email subject"
-            className="subject-input"
-          />
-        </div>
-
-        <div className="form-row">
-          <label className="field-label">Message</label>
-          <RichTextEditor
-            value={formData.body}
-            onChange={(value) => handleInputChange('body', value)}
-            placeholder="Compose your email..."
-          />
-        </div>
-
-        <div className="form-row">
-          <label className="field-label">Attachments</label>
-          <div className="attachments-section">
-            <FileUpload onFileSelect={handleFileSelect} multiple>
-              <div className="upload-area">
-                <span className="upload-icon">📎</span>
-                <span>Click to attach files</span>
-              </div>
-            </FileUpload>
-            
-            {selectedAttachments.length > 0 && (
-              <div className="attachments-list">
-                {selectedAttachments.map((file, index) => (
-                  <div key={index} className="attachment-item">
-                    <span className="attachment-name">{file.name}</span>
-                    <button
-                      className="remove-attachment"
-                      onClick={() => removeAttachment(index)}
-                    >
-                      ×
-                    </button>
-                  </div>
-                ))}
-              </div>
-            )}
+        {/* Main composer area */}
+        <div className="composer-main">
+          <div className="composer-header">
+            <h2 className="composer-title">Compose Email</h2>
           </div>
-        </div>
 
-        <div className="composer-actions">
-          <Button variant="primary" onClick={handleSend}>
-            Send
-          </Button>
-          <Button variant="secondary" onClick={handleSave}>
-            Save Draft
-          </Button>
-          <Button variant="secondary" onClick={handleSendAndContinue}>
-            Send & Continue
-          </Button>
+          <div className="composer-form">
+            <div className="form-row-group">
+              <div className="form-row">
+                <Input
+                  label="From"
+                  value={formData.from}
+                  onChange={(e) => handleInputChange('from', e.target.value)}
+                  disabled
+                  className="from-input"
+                />
+              </div>
+
+              <div className="form-row">
+                <Input
+                  label="To"
+                  value={formData.to}
+                  onChange={(e) => handleInputChange('to', e.target.value)}
+                  placeholder="recipient@example.com"
+                  className="to-input"
+                />
+              </div>
+
+              <div className="form-row">
+                <Input
+                  label="Subject"
+                  value={formData.subject}
+                  onChange={(e) => handleInputChange('subject', e.target.value)}
+                  placeholder="Enter email subject"
+                  className="subject-input"
+                />
+              </div>
+            </div>
+
+            <div className="form-row message-row">
+              <label className="field-label">Message</label>
+              <RichTextEditor
+                value={formData.body}
+                onChange={(value) => handleInputChange('body', value)}
+                placeholder="Compose your email..."
+              />
+            </div>
+
+            <div className="form-row attachments-row">
+              <label className="field-label">Attachments</label>
+              <div className="attachments-section">
+                <FileUpload onFileSelect={handleFileSelect} multiple>
+                  <div className="upload-area">
+                    <span className="upload-icon">📎</span>
+                    <span>Click to attach files or drag and drop</span>
+                  </div>
+                </FileUpload>
+                
+                {selectedAttachments.length > 0 && (
+                  <div className="attachments-list">
+                    {selectedAttachments.map((file, index) => (
+                      <div key={index} className="attachment-item">
+                        <span className="attachment-icon">📄</span>
+                        <span className="attachment-name">{file.name}</span>
+                        <button
+                          className="remove-attachment"
+                          onClick={() => removeAttachment(index)}
+                          title="Remove attachment"
+                        >
+                          ×
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="composer-actions">
+              <Button variant="primary" onClick={handleSend} className="send-btn">
+                Send Email
+              </Button>
+              <Button variant="secondary" onClick={handleSave} className="save-btn">
+                Save Draft
+              </Button>
+              <Button variant="secondary" onClick={handleSendAndContinue} className="continue-btn">
+                Send & Continue
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

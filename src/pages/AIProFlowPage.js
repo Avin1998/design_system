@@ -5,6 +5,7 @@ import Input from '../components/atoms/Input';
 import FileUpload from '../components/atoms/FileUpload';
 import LoadingSpinner from '../components/atoms/LoadingSpinner';
 import ProBadge from '../components/atoms/ProBadge';
+import Modal from '../components/atoms/Modal';
 import './AIProFlowPage.css';
 
 export default function AIProFlowPage() {
@@ -20,6 +21,8 @@ export default function AIProFlowPage() {
   });
   
   const [generatedEmails, setGeneratedEmails] = useState([]);
+  const [selectedEmail, setSelectedEmail] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const updateRecruiterCount = (count) => {
     const newCount = Math.min(Math.max(1, count), 5);
@@ -92,14 +95,14 @@ Best regards,
     }, 3000);
   };
 
-  const toggleEmailExpansion = (emailId) => {
-    setGeneratedEmails(emails => 
-      emails.map(email => 
-        email.id === emailId 
-          ? { ...email, expanded: !email.expanded }
-          : email
-      )
-    );
+  const viewEmail = (email) => {
+    setSelectedEmail(email);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedEmail(null);
   };
 
   const sendEmail = (emailId) => {
@@ -263,21 +266,17 @@ Best regards,
             <span className="email-to">{email.to}</span>
             <span className="email-subject">{email.subject}</span>
             <span className="email-preview">
-              {email.expanded ? (
-                <div className="full-content">
-                  <pre>{email.fullContent}</pre>
-                </div>
-              ) : (
-                <span className="preview-text">{email.preview}</span>
-              )}
+              <span className="preview-text">{email.preview}</span>
             </span>
             <div className="email-actions">
               <Button 
                 variant="secondary" 
                 size="small"
-                onClick={() => toggleEmailExpansion(email.id)}
+                onClick={() => viewEmail(email)}
+                className="view-btn"
               >
-                {email.expanded ? 'Collapse' : 'Expand'}
+                <span className="eye-icon">👁️</span>
+                View
               </Button>
               <Button 
                 variant="primary" 
@@ -313,6 +312,51 @@ Best regards,
           Send All
         </Button>
       </div>
+
+      {/* Email View Modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title={selectedEmail ? `Email to ${selectedEmail.to}` : ''}
+        size="large"
+      >
+        {selectedEmail && (
+          <div className="email-modal-content">
+            <div className="email-meta">
+              <div className="meta-row">
+                <span className="meta-label">From:</span>
+                <span className="meta-value">{selectedEmail.from}</span>
+              </div>
+              <div className="meta-row">
+                <span className="meta-label">To:</span>
+                <span className="meta-value">{selectedEmail.to}</span>
+              </div>
+              <div className="meta-row">
+                <span className="meta-label">Subject:</span>
+                <span className="meta-value">{selectedEmail.subject}</span>
+              </div>
+            </div>
+            <div className="email-body">
+              <pre>{selectedEmail.fullContent}</pre>
+            </div>
+            <div className="modal-actions">
+              <Button 
+                variant="primary" 
+                onClick={() => {
+                  sendEmail(selectedEmail.id);
+                  closeModal();
+                }}
+                disabled={!selectedEmail.canSend}
+              >
+                Send Email
+              </Button>
+              <Button variant="secondary" onClick={closeModal}>
+                Close
+              </Button>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 
