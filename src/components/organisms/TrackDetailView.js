@@ -74,7 +74,7 @@ export default function TrackDetailView({
         <Button 
           variant="minimal" 
           onClick={onBack}
-          className="back-btn btn-secondary btn-minimal"
+          className="back-btn"
         >
           <Icon name="FaArrowLeft" size={16} />
           Back to Patterns

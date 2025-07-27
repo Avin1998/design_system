@@ -9,7 +9,7 @@ export default function Header({ title, search, onSearchChange, onAddTrack }) {
       <h1>{title}</h1>
       <div className="search-add">
         <Input type="text" placeholder="Search patterns..." value={search} onChange={onSearchChange} />
-        <Button onClick={onAddTrack}>Add Track</Button>
+        <Button variant="primary" onClick={onAddTrack}>Add Track</Button>
       </div>
     </div>
   );

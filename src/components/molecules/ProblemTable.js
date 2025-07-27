@@ -47,7 +47,7 @@ export default function ProblemTable({ problems = [], onAttempt, ...props }) {
               </td>
               <td>
                 {problem.completed ? (
-                  <Button variant="minimal" className="review-btn btn-secondary btn-minimal">
+                  <Button variant="minimal" className="review-btn">
                     <Icon name="FaEye" size={14} />
                     Review
                   </Button>
@@ -55,7 +55,7 @@ export default function ProblemTable({ problems = [], onAttempt, ...props }) {
                   <Button 
                     variant="minimal" 
                     onClick={() => onAttempt?.(problem)}
-                    className="attempt-btn btn-secondary btn-minimal"
+                    className="attempt-btn"
                   >
                     <Icon name="FaPlay" size={14} />
                     Attempt

@@ -7,7 +7,7 @@ const navigationItems = [
   { id: 'home', icon: 'FaHome', label: 'Home', path: '/' },
   { id: 'dashboard', icon: 'FaTachometerAlt', label: 'Dashboard', path: '/showcase' },
   { id: 'code', icon: 'FaCode', label: 'Code' },
-  { id: 'design', icon: 'FaSitemap', label: 'System Design' },
+  { id: 'design', icon: 'FaSitemap', label: 'System Design', path: '/system-design' },
   { id: 'email', icon: 'FaEnvelope', label: 'Email' },
   { id: 'assessments', icon: 'FaClipboardList', label: 'Assessments' },
   { id: 'report', icon: 'FaChartBar', label: 'Report' },
@@ -20,6 +20,7 @@ export default function LeftSideNavBar({ ...props }) {
   const getActiveItem = () => {
     if (location.pathname === '/') return 'home';
     if (location.pathname === '/showcase') return 'dashboard';
+    if (location.pathname.startsWith('/system-design')) return 'design';
     return 'home';
   };
 
