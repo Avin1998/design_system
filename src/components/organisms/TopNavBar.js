@@ -22,6 +22,8 @@ export default function TopNavBar({
   const handleNavClick = (buttonId) => {
     if (buttonId === 'code') {
       navigate('/');
+    } else if (buttonId === 'design') {
+      navigate('/system-design');
     } else {
       alert(`${buttonId} section coming soon!`);
     }
