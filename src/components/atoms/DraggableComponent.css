@@ -1,0 +1,45 @@
+.draggable-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: grab;
+  transition: all 0.3s ease;
+  min-width: 80px;
+  user-select: none;
+}
+
+.draggable-component:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--component-color, #4f9cf9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.draggable-component:active {
+  cursor: grabbing;
+  transform: scale(0.95);
+}
+
+.component-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.component-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #eee;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Drag preview */
+.draggable-component.dragging {
+  opacity: 0.5;
+  transform: rotate(5deg);
+}
