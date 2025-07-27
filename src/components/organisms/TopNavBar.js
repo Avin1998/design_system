@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Icon from '../atoms/Icon';
 import Button from '../atoms/Button';
 import ProfileMenu from '../molecules/ProfileMenu';
@@ -15,13 +16,26 @@ export default function TopNavBar({
   companyName = 'CodeMaster',
   streak = 15,
   notifications = 3,
-  onNavClick,
   ...props 
 }) {
+  const navigate = useNavigate();
+
+  const handleNavClick = (buttonId) => {
+    if (buttonId === 'code') {
+      navigate('/');
+    } else {
+      alert(`${buttonId} section coming soon!`);
+    }
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   return (
     <header className="top-navbar" {...props}>
       <div className="navbar-left">
-        <div className="logo-section">
+        <div className="logo-section" onClick={handleLogoClick}>
           <div className="logo">
             <Icon name="FaCode" size={24} className="logo-icon" />
           </div>
@@ -34,7 +48,7 @@ export default function TopNavBar({
               key={button.id}
               variant="secondary"
               className="nav-button"
-              onClick={() => onNavClick?.(button.id)}
+              onClick={() => handleNavClick(button.id)}
             >
               <Icon name={button.icon} size={16} />
               {button.label}

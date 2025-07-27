@@ -24,6 +24,12 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo-section:hover {
+  transform: scale(1.05);
 }
 
 .logo {

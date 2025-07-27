@@ -37,7 +37,11 @@
 }
 
 /* Tooltip for icons */
-.left-sidebar .nav-item::after {
+.nav-item-wrapper {
+  position: relative;
+}
+
+.nav-item-wrapper::after {
   content: attr(data-tooltip);
   position: absolute;
   left: calc(100% + 12px);
@@ -58,7 +62,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-.left-sidebar .nav-item:hover::after {
+.nav-item-wrapper:hover::after {
   opacity: 1;
   visibility: visible;
 }
