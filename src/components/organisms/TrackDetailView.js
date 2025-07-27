@@ -37,7 +37,7 @@ const metrics = [
     title: 'Problems Solved',
     value: '2/4',
     icon: 'FaCheckCircle',
-    color: '#00e676',
+    color: '#0066ff',
     trend: { direction: 'up', value: '+1 today' }
   },
   {

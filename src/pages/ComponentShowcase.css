@@ -14,7 +14,7 @@
   font-weight: 700;
   color: #eee;
   margin: 0 0 12px 0;
-  background: linear-gradient(135deg, #00e676, #006bbd);
+  background: linear-gradient(135deg, #0066ff, #006bbd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -49,9 +49,9 @@
 }
 
 .nav-tab.active {
-  background: linear-gradient(135deg, #00e676, #006bbd);
+  background: linear-gradient(135deg, #0066ff, #006bbd);
   color: white;
-  box-shadow: 0 4px 16px rgba(0, 230, 118, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
 }
 
 .nav-tab:hover:not(.active) {
@@ -76,7 +76,7 @@
 
 .component-demo h3 {
   font-size: 20px;
-  color: #00e676;
+  color: #0066ff;
   margin: 0 0 24px 0;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -149,15 +149,15 @@
   padding: 24px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  border: 1px solid rgba(0, 230, 118, 0.3);
+  border: 1px solid rgba(0, 102, 255, 0.3);
   color: #eee;
   text-align: center;
 }
 
 .rotating-icon {
-  color: #00e676;
+  color: #0066ff;
   animation: rotate 3s linear infinite;
-  filter: drop-shadow(0 0 12px #00e676);
+  filter: drop-shadow(0 0 12px #0066ff);
 }
 
 @keyframes rotate {

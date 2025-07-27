@@ -49,8 +49,8 @@
 }
 
 .difficulty.easy {
-  background: rgba(0, 230, 118, 0.2);
-  color: #00e676;
+  background: rgba(0, 102, 255, 0.2);
+  color: #0066ff;
 }
 
 .difficulty.medium {
@@ -106,9 +106,9 @@
 }
 
 .tab-btn.active {
-  color: #00e676;
-  background: rgba(0, 230, 118, 0.1);
-  border-bottom: 2px solid #00e676;
+  color: #0066ff;
+  background: rgba(0, 102, 255, 0.1);
+  border-bottom: 2px solid #0066ff;
 }
 
 .panel-content {
@@ -124,7 +124,7 @@
 }
 
 .description-content h4 {
-  color: #00e676;
+  color: #0066ff;
   margin: 20px 0 12px 0;
   font-size: 16px;
 }
@@ -144,11 +144,11 @@
   padding: 16px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 8px;
-  border-left: 3px solid #00e676;
+  border-left: 3px solid #0066ff;
 }
 
 .example h4 {
-  color: #00e676;
+  color: #0066ff;
   margin: 0 0 12px 0;
   font-size: 14px;
 }
@@ -220,7 +220,7 @@
 }
 
 .results-summary.success {
-  color: #00e676;
+  color: #0066ff;
 }
 
 .results-summary.failed {
@@ -243,8 +243,8 @@
 }
 
 .result-item.passed {
-  background: rgba(0, 230, 118, 0.1);
-  border-left: 3px solid #00e676;
+  background: rgba(0, 102, 255, 0.1);
+  border-left: 3px solid #0066ff;
 }
 
 .result-item.failed {
@@ -257,7 +257,7 @@
 }
 
 .result-item.passed .result-status {
-  color: #00e676;
+  color: #0066ff;
 }
 
 .result-item.failed .result-status {

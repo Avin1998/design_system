@@ -32,8 +32,8 @@
 
 .left-sidebar .nav-item.active {
   border-left: none;
-  background: rgba(0, 230, 118, 0.2);
-  box-shadow: 0 0 16px rgba(0, 230, 118, 0.4);
+  background: rgba(0, 102, 255, 0.2);
+  box-shadow: 0 0 16px rgba(0, 102, 255, 0.4);
 }
 
 /* Tooltip for icons */

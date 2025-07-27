@@ -12,15 +12,15 @@
 }
 
 .problem-table th {
-  background: rgba(0, 230, 118, 0.1);
-  color: #00e676;
+  background: rgba(0, 102, 255, 0.1);
+  color: #0066ff;
   padding: 16px 20px;
   text-align: left;
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border-bottom: 1px solid rgba(0, 230, 118, 0.2);
+  border-bottom: 1px solid rgba(0, 102, 255, 0.2);
 }
 
 .problem-table td {
@@ -34,7 +34,7 @@
 }
 
 .problem-table tr.completed {
-  background: rgba(0, 230, 118, 0.05);
+  background: rgba(0, 102, 255, 0.05);
 }
 
 .problem-name {
@@ -58,13 +58,13 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #00e676;
+  color: #0066ff;
   font-weight: 500;
 }
 
 .check-icon {
-  color: #00e676;
-  filter: drop-shadow(0 0 4px rgba(0, 230, 118, 0.6));
+  color: #0066ff;
+  filter: drop-shadow(0 0 4px rgba(0, 102, 255, 0.6));
 }
 
 .not-attempted {

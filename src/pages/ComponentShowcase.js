@@ -81,7 +81,7 @@ export default function ComponentShowcase() {
                   title="Problems Solved"
                   value="24"
                   icon="FaCheckCircle"
-                  color="#00e676"
+                  color="#0066ff"
                   trend={{ direction: 'up', value: '+3 today' }}
                 />
                 <MetricsCard

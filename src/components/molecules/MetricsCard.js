@@ -7,7 +7,7 @@ export default function MetricsCard({
   value, 
   icon, 
   trend = null, 
-  color = '#00e676',
+  color = '#0066ff',
   ...props 
 }) {
   return (

@@ -14,8 +14,8 @@
 }
 
 .nav-item.active {
-  background: rgba(0, 230, 118, 0.15);
-  border-left: 3px solid #00e676;
+  background: rgba(0, 102, 255, 0.15);
+  border-left: 3px solid #0066ff;
 }
 
 .nav-item.active::before {
@@ -28,7 +28,7 @@
   height: 0;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
-  border-right: 8px solid #00e676;
+  border-right: 8px solid #0066ff;
 }
 
 .nav-label {
