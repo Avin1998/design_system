@@ -1,0 +1,90 @@
+.problem-table-container {
+  background: #1a1a2f;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.problem-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.problem-table th {
+  background: rgba(0, 230, 118, 0.1);
+  color: #00e676;
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(0, 230, 118, 0.2);
+}
+
+.problem-table td {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: top;
+}
+
+.problem-table tr:hover:not(.completed) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.problem-table tr.completed {
+  background: rgba(0, 230, 118, 0.05);
+}
+
+.problem-name {
+  max-width: 300px;
+}
+
+.problem-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #eee;
+  margin-bottom: 4px;
+}
+
+.problem-desc {
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+.completed-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #00e676;
+  font-weight: 500;
+}
+
+.check-icon {
+  color: #00e676;
+  filter: drop-shadow(0 0 4px rgba(0, 230, 118, 0.6));
+}
+
+.not-attempted {
+  color: #aaa;
+  font-style: italic;
+}
+
+.attempt-btn, .review-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.attempt-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 107, 189, 0.4);
+  transform: translateY(-2px);
+}
+
+.review-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

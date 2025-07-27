@@ -2,7 +2,7 @@
 import React from 'react';
 import Card from '../molecules/Card';
 import './CardGrid.css';
-export default function CardGrid({ items }) {
+export default function CardGrid({ items, onCardClick }) {
   return (
     <div className="grid">
       {items.map((item, i) => (
@@ -13,6 +13,7 @@ export default function CardGrid({ items }) {
           progress={item.progress ?? 0}
           status={item.status || 'inactive'}
           image={item.image}
+          onClick={() => onCardClick?.(item)}
         />
       ))}
     </div>

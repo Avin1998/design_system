@@ -3,7 +3,7 @@ import React from 'react';
 import ProgressBar from '../atoms/ProgressBar';
 import './Card.css';
 
-export default function Card({ title, description, progress, status, image }) {
+export default function Card({ title, description, progress, status, image, onClick }) {
   let statusLabel;
   if (status === 'inactive') statusLabel = 'Not Started';
   else if (status === 'done') statusLabel = 'Mastered';
@@ -16,6 +16,7 @@ export default function Card({ title, description, progress, status, image }) {
         // Pass the background image to the CSS custom property if provided
         '--bg-url': image ? `url(${image})` : undefined,
       }}
+      onClick={onClick}
     >
       <div className="card-top"></div>
       <div className="card-bottom">
