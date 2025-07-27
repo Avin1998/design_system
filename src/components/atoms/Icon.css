@@ -1,0 +1,14 @@
+.icon {
+  color: #eee;
+  transition: all 0.3s ease;
+}
+
+.icon:hover {
+  color: #0066ff;
+  filter: drop-shadow(0 0 5px rgba(0, 102, 255, 0.6));
+}
+
+.icon.active {
+  color: #0066ff;
+  filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.8));
+}

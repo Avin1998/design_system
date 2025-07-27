@@ -1,0 +1,270 @@
+.code-attempt-page {
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  background: #0d0d17;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #1a1a2f;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+}
+
+.problem-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.problem-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #eee;
+  margin: 0;
+}
+
+.difficulty {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.difficulty.easy {
+  background: rgba(0, 102, 255, 0.2);
+  color: #0066ff;
+}
+
+.difficulty.medium {
+  background: rgba(255, 217, 102, 0.2);
+  color: #ffd966;
+}
+
+.difficulty.hard {
+  background: rgba(255, 111, 97, 0.2);
+  color: #ff6f61;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.header-actions button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+}
+
+.code-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.left-panel {
+  width: 50%;
+  background: #1a1a2f;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn {
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.tab-btn.active {
+  color: #0066ff;
+  background: rgba(0, 102, 255, 0.1);
+  border-bottom: 2px solid #0066ff;
+}
+
+.panel-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.description-content p {
+  color: #eee;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.description-content h4 {
+  color: #0066ff;
+  margin: 20px 0 12px 0;
+  font-size: 16px;
+}
+
+.description-content ul {
+  color: #ccc;
+  padding-left: 20px;
+}
+
+.description-content li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.example {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border-left: 3px solid #0066ff;
+}
+
+.example h4 {
+  color: #0066ff;
+  margin: 0 0 12px 0;
+  font-size: 14px;
+}
+
+.example-block {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.example-block strong {
+  color: #eee;
+}
+
+.right-panel {
+  width: 50%;
+  background: #1a1a2f;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  color: #aaa;
+}
+
+.code-editor {
+  flex: 1;
+  background: #0d0d17;
+  border: none;
+  outline: none;
+  color: #eee;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 20px;
+  resize: none;
+}
+
+.test-results {
+  max-height: 300px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.results-header h4 {
+  margin: 0;
+  color: #eee;
+  font-size: 14px;
+}
+
+.results-summary {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.results-summary.success {
+  color: #0066ff;
+}
+
+.results-summary.failed {
+  color: #ff6f61;
+}
+
+.results-list {
+  padding: 12px 20px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.result-item {
+  display: flex;
+  gap: 12px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.result-item.passed {
+  background: rgba(0, 102, 255, 0.1);
+  border-left: 3px solid #0066ff;
+}
+
+.result-item.failed {
+  background: rgba(255, 111, 97, 0.1);
+  border-left: 3px solid #ff6f61;
+}
+
+.result-status {
+  margin-top: 2px;
+}
+
+.result-item.passed .result-status {
+  color: #0066ff;
+}
+
+.result-item.failed .result-status {
+  color: #ff6f61;
+}
+
+.result-details div {
+  color: #ccc;
+  margin-bottom: 2px;
+}

@@ -1,0 +1,68 @@
+.left-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 80px;
+  background: #1a1a2f;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  z-index: 900;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 0 12px;
+}
+
+.left-sidebar .nav-item {
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.left-sidebar .nav-item.active {
+  border-left: none;
+  background: rgba(0, 102, 255, 0.2);
+  box-shadow: 0 0 16px rgba(0, 102, 255, 0.4);
+}
+
+/* Tooltip for icons */
+.nav-item-wrapper {
+  position: relative;
+}
+
+.nav-item-wrapper::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1a1a2f;
+  color: #eee;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.nav-item-wrapper:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
