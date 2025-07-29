@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/atoms/Button';
-import Input from '../components/atoms/Input';
+import InputField from '../components/atoms/InputField';
+import Container from '../components/atoms/Container';
 import FileUpload from '../components/atoms/FileUpload';
 import LoadingSpinner from '../components/atoms/LoadingSpinner';
 import ProBadge from '../components/atoms/ProBadge';
@@ -121,12 +122,13 @@ Best regards,
   };
 
   const renderStep1 = () => (
-    <div className="step-content">
-      <div className="step-header">
-        <h2 className="step-title">How many recruiters?</h2>
-        <p className="step-description">You can send personalized emails to up to 5 recruiters simultaneously.</p>
-      </div>
-      
+    <Container
+      title="How many recruiters?"
+      subtitle="You can send personalized emails to up to 5 recruiters simultaneously."
+      maxWidth="narrow"
+      centerContent={true}
+      className="step-content"
+    >
       <div className="recruiter-count-selector">
         <div className="count-controls">
           <button 
@@ -153,33 +155,35 @@ Best regards,
           Continue
         </Button>
       </div>
-    </div>
+    </Container>
   );
 
   const renderStep2 = () => (
-    <div className="step-content">
-      <div className="step-header">
-        <h2 className="step-title">Recruiter Details</h2>
-        <p className="step-description">Provide email addresses and optional LinkedIn profiles for personalization.</p>
-      </div>
-      
+    <Container
+      title="Recruiter Details"
+      subtitle="Provide email addresses and optional LinkedIn profiles for personalization."
+      maxWidth="narrow"
+      className="step-content"
+    >
       <div className="recruiters-form">
         {formData.recruiters.map((recruiter, index) => (
           <div key={index} className="recruiter-form-group">
             <h4 className="recruiter-label">Recruiter {index + 1}</h4>
             <div className="recruiter-inputs">
-              <Input
+              <InputField
                 label="Email Address"
                 value={recruiter.email}
                 onChange={(e) => updateRecruiter(index, 'email', e.target.value)}
                 placeholder="recruiter@company.com"
                 required
+                type="email"
               />
-              <Input
+              <InputField
                 label="LinkedIn Profile (Optional)"
                 value={recruiter.linkedinUrl}
                 onChange={(e) => updateRecruiter(index, 'linkedinUrl', e.target.value)}
                 placeholder="https://linkedin.com/in/recruiter-name"
+                type="url"
               />
             </div>
           </div>
@@ -210,7 +214,7 @@ Best regards,
       </div>
       
       <div className="step-actions">
-        <Button variant="secondary" onClick={() => setCurrentStep(1)}>
+        <Button variant="back" onClick={() => setCurrentStep(1)}>
           Back
         </Button>
         <Button 
@@ -221,7 +225,7 @@ Best regards,
           Generate Emails
         </Button>
       </div>
-    </div>
+    </Container>
   );
 
   const renderStep3 = () => (
@@ -235,21 +239,26 @@ Best regards,
   );
 
   const renderStep4 = () => (
-    <div className="step-content">
-      <div className="step-header">
-        <h2 className="step-title">Generated Emails</h2>
-        <p className="step-description">Review and send your personalized emails to recruiters.</p>
-        
-        {!isOAuthConnected && (
-          <div className="oauth-warning">
-            <span className="warning-icon">⚠️</span>
-            <span>Gmail connection required to send emails.</span>
-            <Button variant="primary" size="small" onClick={connectOAuth}>
-              Connect Gmail
-            </Button>
-          </div>
-        )}
-      </div>
+    <Container
+      title="Generated Emails"
+      subtitle="Review and send your personalized emails to recruiters."
+      maxWidth="wide"
+      className="step-content"
+    >
+      {!isOAuthConnected && (
+        <div className="oauth-warning">
+          <span className="warning-icon">⚠️</span>
+          <span>Gmail connection required to send emails.</span>
+          <Button 
+            variant="integration" 
+            icon="📧"
+            subtitle="Connect your account"
+            onClick={connectOAuth}
+          >
+            Connect Gmail
+          </Button>
+        </div>
+      )}
       
       <div className="emails-table">
         <div className="table-header">
@@ -293,7 +302,7 @@ Best regards,
       </div>
       
       <div className="step-actions">
-        <Button variant="secondary" onClick={() => navigate('/email')}>
+        <Button variant="back" onClick={() => navigate('/email')}>
           Back to Email Hub
         </Button>
         <Button 
@@ -357,7 +366,7 @@ Best regards,
           </div>
         )}
       </Modal>
-    </div>
+    </Container>
   );
 
   return (
@@ -365,11 +374,11 @@ Best regards,
       <div className="page-header">
         <div className="header-content">
           <Button 
-            variant="secondary" 
+            variant="back" 
             onClick={() => navigate('/email')}
             className="back-btn"
           >
-            ← Back to Email Hub
+            Back to Email Hub
           </Button>
           
           <div className="header-info">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Input from '../atoms/Input';
+import InputField from '../atoms/InputField';
 import RichTextEditor from '../atoms/RichTextEditor';
 import FileUpload from '../atoms/FileUpload';
 import Button from '../atoms/Button';
@@ -112,7 +112,7 @@ export default function EmailComposer({
           <div className="composer-form">
             <div className="form-row-group">
               <div className="form-row">
-                <Input
+                <InputField
                   label="From"
                   value={formData.from}
                   onChange={(e) => handleInputChange('from', e.target.value)}
@@ -122,17 +122,18 @@ export default function EmailComposer({
               </div>
 
               <div className="form-row">
-                <Input
+                <InputField
                   label="To"
                   value={formData.to}
                   onChange={(e) => handleInputChange('to', e.target.value)}
                   placeholder="recipient@example.com"
+                  type="email"
                   className="to-input"
                 />
               </div>
 
               <div className="form-row">
-                <Input
+                <InputField
                   label="Subject"
                   value={formData.subject}
                   onChange={(e) => handleInputChange('subject', e.target.value)}

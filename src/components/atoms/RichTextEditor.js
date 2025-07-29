@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './RichTextEditor.css';
 
 export default function RichTextEditor({ 
@@ -10,6 +10,16 @@ export default function RichTextEditor({
   const [isBold, setIsBold] = useState(false);
   const [isItalic, setIsItalic] = useState(false);
   const [isUnderline, setIsUnderline] = useState(false);
+  const editorRef = useRef(null);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Initialize content only once to prevent cursor jumping
+  useEffect(() => {
+    if (editorRef.current && !isInitialized && value) {
+      editorRef.current.innerHTML = value;
+      setIsInitialized(true);
+    }
+  }, [value, isInitialized]);
 
   const handleFormat = (command, value = null) => {
     document.execCommand(command, false, value);
@@ -25,6 +35,20 @@ export default function RichTextEditor({
       onChange(e.target.innerHTML);
     }
   };
+
+  // Handle selection change to update button states
+  const handleSelectionChange = () => {
+    if (document.activeElement === editorRef.current) {
+      setIsBold(document.queryCommandState('bold'));
+      setIsItalic(document.queryCommandState('italic'));
+      setIsUnderline(document.queryCommandState('underline'));
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('selectionchange', handleSelectionChange);
+    return () => document.removeEventListener('selectionchange', handleSelectionChange);
+  }, []);
 
   return (
     <div className={`rich-text-editor ${className}`}>
@@ -91,9 +115,9 @@ export default function RichTextEditor({
       </div>
 
       <div
+        ref={editorRef}
         className="editor-content"
         contentEditable
-        dangerouslySetInnerHTML={{ __html: value }}
         onInput={handleContentChange}
         data-placeholder={placeholder}
         suppressContentEditableWarning={true}

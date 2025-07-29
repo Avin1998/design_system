@@ -198,3 +198,141 @@
     transform: scale(1.1);
   }
 }
+
+/* Back Button Variant */
+.btn-back {
+  background: transparent;
+  color: #66b3ff;
+  border: 1px solid rgba(102, 179, 255, 0.2);
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-back::before {
+  display: none;
+}
+
+.btn-back:hover {
+  background: rgba(102, 179, 255, 0.08);
+  border-color: rgba(102, 179, 255, 0.4);
+  color: #80c7ff;
+  transform: translateX(-2px);
+  box-shadow: 0 4px 12px rgba(102, 179, 255, 0.15);
+}
+
+.btn-back:active {
+  transform: translateX(0);
+  box-shadow: 0 2px 6px rgba(102, 179, 255, 0.2);
+}
+
+.btn-back .back-arrow {
+  font-size: 16px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-back:hover .back-arrow {
+  transform: translateX(-2px);
+}
+
+/* Integration Button Variant */
+.btn-integration {
+  background: linear-gradient(135deg, #1a1a2f, #2d2d44);
+  color: #ffffff;
+  border: 1px solid rgba(102, 179, 255, 0.2);
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-integration::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 179, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.btn-integration:hover {
+  background: linear-gradient(135deg, #2d2d44, #404066);
+  border-color: rgba(102, 179, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(102, 179, 255, 0.15);
+}
+
+.btn-integration:hover::before {
+  left: 100%;
+}
+
+.btn-integration:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(102, 179, 255, 0.2);
+}
+
+.btn-integration .integration-icon {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.btn-integration .integration-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.btn-integration .integration-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn-integration .integration-subtitle {
+  font-weight: 400;
+  font-size: 12px;
+  color: #b3b3b3;
+  opacity: 0.8;
+}
+
+/* Integration button states */
+.btn-integration.connected {
+  background: linear-gradient(135deg, #0d4f0d, #1a5f1a);
+  border-color: rgba(76, 175, 80, 0.3);
+  color: #c8e6c9;
+}
+
+.btn-integration.connected:hover {
+  background: linear-gradient(135deg, #1a5f1a, #2e7d32);
+  border-color: rgba(76, 175, 80, 0.5);
+}
+
+.btn-integration.error {
+  background: linear-gradient(135deg, #4f0d0d, #5f1a1a);
+  border-color: rgba(244, 67, 54, 0.3);
+  color: #ffcdd2;
+}
+
+.btn-integration.error:hover {
+  background: linear-gradient(135deg, #5f1a1a, #7d2e2e);
+  border-color: rgba(244, 67, 54, 0.5);
+}

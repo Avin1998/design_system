@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import EmailComposer from '../components/molecules/EmailComposer';
 import Button from '../components/atoms/Button';
+import Container from '../components/atoms/Container';
 import './GmailComposerPage.css';
 
 export default function GmailComposerPage() {
@@ -66,11 +67,11 @@ export default function GmailComposerPage() {
       <div className="page-header">
         <div className="header-content">
           <Button 
-            variant="secondary" 
+            variant="back" 
             onClick={() => navigate('/email')}
             className="back-btn"
           >
-            ← Back to Email Hub
+            Back to Email Hub
           </Button>
           
           <div className="header-info">
@@ -86,8 +87,9 @@ export default function GmailComposerPage() {
                   <span className="status-indicator disconnected"></span>
                   <span>Gmail Not Connected</span>
                   <Button 
-                    variant="primary" 
-                    size="small"
+                    variant="integration" 
+                    icon="📧"
+                    subtitle="Connect your account"
                     onClick={connectGmail}
                     className="connect-btn"
                   >
@@ -100,7 +102,7 @@ export default function GmailComposerPage() {
         </div>
       </div>
 
-      <div className="composer-container">
+      <Container maxWidth="wide" padding="spacious">
         <EmailComposer
           from="your.email@gmail.com"
           templates={templates}
@@ -111,7 +113,7 @@ export default function GmailComposerPage() {
             console.log('Template selected:', template);
           }}
         />
-      </div>
+      </Container>
     </div>
   );
 }
