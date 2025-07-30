@@ -5,16 +5,14 @@ import Button from '../components/atoms/Button';
 import ProBadge from '../components/atoms/ProBadge';
 import ComponentPalette from '../components/molecules/ComponentPalette';
 import DesignCanvas from '../components/organisms/DesignCanvas';
-import { useSystemDesignData } from '../data/DataProvider.js';
 import './SystemDesignCanvasPage.css';
 
-export default function SystemDesignCanvasPage() {
+export default function SystemDesignCanvasPage({ tracks, canvasComponents, componentCategories }) {
   const { trackId } = useParams();
   const navigate = useNavigate();
   const [canvasElements, setCanvasElements] = useState([]);
   const [connections, setConnections] = useState([]);
   const [isProUser, setIsProUser] = useState(false); // Mock pro status
-  const { tracks } = useSystemDesignData();
 
   const track = tracks.find(t => t.id === trackId);
 
@@ -169,7 +167,7 @@ export default function SystemDesignCanvasPage() {
 
       <div className="canvas-workspace">
         <div className="palette-sidebar">
-          <ComponentPalette />
+          <ComponentPalette canvasComponents={canvasComponents} componentCategories={componentCategories} />
         </div>
         
         <div className="canvas-area">

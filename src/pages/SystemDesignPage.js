@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/molecules/Header';
 import CardGrid from '../components/organisms/CardGrid';
-import { useSystemDesignData } from '../data/DataProvider.js';
 
-export default function SystemDesignPage() {
+export default function SystemDesignPage({ systemDesignTracks }) {
   const [search, setSearch] = useState('');
   const [activeCards, setActiveCards] = useState([]);
   const navigate = useNavigate();
-  const { tracks: systemDesignTracks } = useSystemDesignData();
   
   const filtered = systemDesignTracks.filter(track => 
     track.name.toLowerCase().includes(search.toLowerCase()) ||
