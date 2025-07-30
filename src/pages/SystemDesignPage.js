@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/molecules/Header';
 import CardGrid from '../components/organisms/CardGrid';
-import { systemDesignTracks } from '../data/systemDesignTracks';
 
-export default function SystemDesignPage() {
+export default function SystemDesignPage({ systemDesignTracks }) {
   const [search, setSearch] = useState('');
   const [activeCards, setActiveCards] = useState([]);
   const navigate = useNavigate();

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { FiMic, FiMicOff } from 'react-icons/fi';
 import './TextArea.css';
 
@@ -17,7 +17,7 @@ export default function TextArea({
   const recognitionRef = useRef(null);
 
   // Initialize speech recognition
-  React.useEffect(() => {
+  useEffect(() => {
     if (!enableSpeechToText) return;
     
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
