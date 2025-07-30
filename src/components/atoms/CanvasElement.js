@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiX, FiEdit2, FiLink } from 'react-icons/fi';
 import './CanvasElement.css';
 
@@ -44,7 +44,7 @@ export default function CanvasElement({
     setIsDragging(false);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isDragging) {
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);

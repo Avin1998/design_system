@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import CanvasElement from '../atoms/CanvasElement';
 import ConnectionLine from '../atoms/ConnectionLine';
 import './DesignCanvas.css';
@@ -24,7 +24,7 @@ export default function DesignCanvas({
   const canvasRef = useRef(null);
 
   // Keyboard shortcuts for copy/paste
-  React.useEffect(() => {
+  useEffect(() => {
     const handleKeyDown = (e) => {
       // Only handle shortcuts when canvas is focused or element is selected
       if (!selectedElement && !document.activeElement?.closest('.design-canvas')) return;

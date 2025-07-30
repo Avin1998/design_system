@@ -5,7 +5,7 @@ import Button from '../components/atoms/Button';
 import ProBadge from '../components/atoms/ProBadge';
 import ComponentPalette from '../components/molecules/ComponentPalette';
 import DesignCanvas from '../components/organisms/DesignCanvas';
-import { systemDesignTracks } from '../data/systemDesignTracks';
+import { useSystemDesignData } from '../data';
 import './SystemDesignCanvasPage.css';
 
 export default function SystemDesignCanvasPage() {
@@ -14,8 +14,9 @@ export default function SystemDesignCanvasPage() {
   const [canvasElements, setCanvasElements] = useState([]);
   const [connections, setConnections] = useState([]);
   const [isProUser, setIsProUser] = useState(false); // Mock pro status
+  const { tracks } = useSystemDesignData();
 
-  const track = systemDesignTracks.find(t => t.id === trackId);
+  const track = tracks.find(t => t.id === trackId);
 
   useEffect(() => {
     // Load saved canvas state if exists

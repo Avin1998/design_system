@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import DraggableComponent from '../atoms/DraggableComponent';
-import { canvasComponents, componentCategories } from '../../data/canvasComponents';
+import { useCanvasData } from '../../data';
 import './ComponentPalette.css';
 
 export default function ComponentPalette({ className = '' }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
+  const { components: canvasComponents, categories: componentCategories } = useCanvasData();
 
   const filteredComponents = canvasComponents.filter(component => {
     const matchesCategory = selectedCategory === 'All' || component.category === selectedCategory;

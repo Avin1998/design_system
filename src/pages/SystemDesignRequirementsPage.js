@@ -3,26 +3,26 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import Button from '../components/atoms/Button';
 import RequirementQuestion from '../components/molecules/RequirementQuestion';
-import { systemDesignTracks } from '../data/systemDesignTracks';
-import { systemDesignQuestions } from '../data/systemDesignQuestions';
+import { useSystemDesignData } from '../data';
 import './SystemDesignRequirementsPage.css';
 
 export default function SystemDesignRequirementsPage() {
   const { trackId } = useParams();
   const navigate = useNavigate();
   const [answers, setAnswers] = useState({});
+  const { tracks, questions } = useSystemDesignData();
   
-  const track = systemDesignTracks.find(t => t.id === trackId);
-  const questions = systemDesignQuestions[trackId] || systemDesignQuestions.default;
+  const track = tracks.find(t => t.id === trackId);
+  const trackQuestions = questions[trackId] || questions.default;
 
   useEffect(() => {
     // Initialize answers object
     const initialAnswers = {};
-    questions.forEach(q => {
+    trackQuestions.forEach(q => {
       initialAnswers[q.id] = '';
     });
     setAnswers(initialAnswers);
-  }, [questions]);
+  }, [trackQuestions]);
 
   const handleAnswerChange = (questionId, value) => {
     setAnswers(prev => ({
@@ -43,7 +43,7 @@ export default function SystemDesignRequirementsPage() {
     navigate(`/system-design/canvas/${trackId}`);
   };
 
-  const isComplete = questions.every(q => answers[q.id]?.trim().length > 0);
+  const isComplete = trackQuestions.every(q => answers[q.id]?.trim().length > 0);
 
   if (!track) {
     return (
@@ -82,13 +82,13 @@ export default function SystemDesignRequirementsPage() {
             <div className="progress-bar">
               <div 
                 className="progress-fill"
-                style={{ width: `${(Object.values(answers).filter(a => a.trim()).length / questions.length) * 100}%` }}
+                style={{ width: `${(Object.values(answers).filter(a => a.trim()).length / trackQuestions.length) * 100}%` }}
               />
             </div>
           </div>
 
           <div className="questions-container">
-            {questions.map((question, index) => (
+            {trackQuestions.map((question, index) => (
               <RequirementQuestion
                 key={question.id}
                 question={question.question}
