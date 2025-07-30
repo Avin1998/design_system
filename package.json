@@ -41,7 +41,7 @@
   "bugs": {
     "url": "https://github.com/Avin1998/design_system/issues"
   },
-  "homepage": "https://github.com/Avin1998/design_system#readme",
+
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
