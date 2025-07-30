@@ -1,0 +1,101 @@
+.brain-segment {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brain-segment-path {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brain-segment-path:hover {
+  stroke-width: 2;
+  filter: drop-shadow(0 0 8px currentColor) !important;
+}
+
+.brain-segment-hovered .brain-segment-path {
+  stroke-width: 2;
+  filter: drop-shadow(0 0 8px currentColor) !important;
+  animation: brainPulse 1.5s ease-in-out infinite;
+}
+
+.brain-segment-active .brain-segment-path {
+  animation: brainActive 2s ease-in-out infinite;
+}
+
+.brain-segment-completed .brain-segment-path {
+  animation: brainCompleted 1s ease-in-out;
+}
+
+.brain-segment-indicator {
+  animation: indicatorPulse 2s ease-in-out infinite;
+}
+
+/* Tooltip styling */
+.brain-segment-tooltip {
+  text-align: center;
+  max-width: 200px;
+}
+
+.brain-segment-tooltip-title {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.brain-segment-tooltip-description {
+  font-size: 11px;
+  color: #cccccc;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.brain-segment-tooltip-badge {
+  font-size: 9px;
+  padding: 2px 6px;
+}
+
+/* Animations */
+@keyframes brainPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+}
+
+@keyframes brainActive {
+  0%, 100% {
+    fill-opacity: 0.9;
+    stroke-opacity: 0.8;
+  }
+  50% {
+    fill-opacity: 1;
+    stroke-opacity: 1;
+  }
+}
+
+@keyframes brainCompleted {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes indicatorPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
