@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/molecules/Header';
 import CardGrid from '../components/organisms/CardGrid';
-import { useSystemDesignData } from '../data';
+import { useSystemDesignData } from '../data/DataProvider.js';
 
 export default function SystemDesignPage() {
   const [search, setSearch] = useState('');

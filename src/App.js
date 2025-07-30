@@ -4,7 +4,7 @@ import Header from './components/molecules/Header';
 import CardGrid from './components/organisms/CardGrid';
 import MainLayout from './components/organisms/MainLayout';
 import ExpandedCard from './components/molecules/ExpandedCard';
-import { useCodingPatterns } from './data';
+import { useCodingPatterns } from './data/DataProvider.js';
 
 export default function App() {
   const [search, setSearch] = useState('');

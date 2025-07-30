@@ -5,7 +5,7 @@ import Button from '../components/atoms/Button';
 import ProBadge from '../components/atoms/ProBadge';
 import ComponentPalette from '../components/molecules/ComponentPalette';
 import DesignCanvas from '../components/organisms/DesignCanvas';
-import { useSystemDesignData } from '../data';
+import { useSystemDesignData } from '../data/DataProvider.js';
 import './SystemDesignCanvasPage.css';
 
 export default function SystemDesignCanvasPage() {

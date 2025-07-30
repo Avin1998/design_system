@@ -1,12 +1,58 @@
 {
   "name": "design-system-react",
   "version": "1.0.0",
-  "private": true,
+  "description": "A comprehensive React design system with atomic design principles and data layer architecture",
+  "main": "src/lib.js",
+  "module": "src/lib.js",
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "import": "./src/lib.js",
+      "require": "./src/lib.js"
+    },
+    "./components": {
+      "import": "./src/components/index.js",
+      "require": "./src/components/index.js"
+    },
+    "./data": {
+      "import": "./src/data/index.js", 
+      "require": "./src/data/index.js"
+    },
+    "./styles": "./src/styles.css"
+  },
+  "keywords": [
+    "react",
+    "design-system",
+    "components",
+    "ui",
+    "atomic-design",
+    "data-layer"
+  ],
+  "author": "Avin1998",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avin1998/design_system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Avin1998/design_system/issues"
+  },
+  "homepage": "https://github.com/Avin1998/design_system#readme",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "dependencies": {
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.7.1"
+  },
+  "devDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.5.0",
-    "react-router-dom": "^7.7.1",
     "react-scripts": "5.0.1"
   },
   "scripts": {

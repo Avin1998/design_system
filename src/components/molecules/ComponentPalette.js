@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DraggableComponent from '../atoms/DraggableComponent';
-import { useCanvasData } from '../../data';
+import { useCanvasData } from '../../data/DataProvider.js';
 import './ComponentPalette.css';
 
 export default function ComponentPalette({ className = '' }) {

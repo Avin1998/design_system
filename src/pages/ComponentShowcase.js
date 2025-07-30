@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DemoRenderer from '../components/molecules/DemoRenderer';
-import { useComponentDemos } from '../data';
+import { useComponentDemos } from '../data/DataProvider.js';
 import './ComponentShowcase.css';
 
 export default function ComponentShowcase() {

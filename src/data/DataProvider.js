@@ -1,9 +1,9 @@
 import React, { createContext, useContext } from 'react';
-import { codingPatterns, getExpandedCardData } from './codingPatterns';
-import { systemDesignTracks, systemDesignCategories } from './systemDesignTracks';
-import { systemDesignQuestions } from './systemDesignQuestions';
-import { canvasComponents, componentCategories } from './canvasComponents';
-import { componentDemos } from './componentDemos';
+import { codingPatterns, getExpandedCardData } from './codingPatterns.js';
+import { systemDesignTracks, systemDesignCategories } from './systemDesignTracks.js';
+import { systemDesignQuestions } from './systemDesignQuestions.js';
+import { canvasComponents, componentCategories } from './canvasComponents.js';
+import { componentDemos } from './componentDemos.js';
 
 // Create the data context
 const DataContext = createContext();

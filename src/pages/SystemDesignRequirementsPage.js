@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import Button from '../components/atoms/Button';
 import RequirementQuestion from '../components/molecules/RequirementQuestion';
-import { useSystemDesignData } from '../data';
+import { useSystemDesignData } from '../data/DataProvider.js';
 import './SystemDesignRequirementsPage.css';
 
 export default function SystemDesignRequirementsPage() {

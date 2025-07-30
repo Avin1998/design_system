@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from './components/organisms/MainLayout';
-import { DataProvider } from './data';
+import { DataProvider } from './data/DataProvider.js';
 import HomePage from './pages/HomePage';
 import SystemDesignPage from './pages/SystemDesignPage';
 import SystemDesignRequirementsPage from './pages/SystemDesignRequirementsPage';
