@@ -1,0 +1,149 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Max width variants */
+.container-default {
+  max-width: 1200px;
+}
+
+.container-narrow {
+  max-width: 800px;
+}
+
+.container-wide {
+  max-width: 1400px;
+}
+
+.container-full {
+  max-width: none;
+}
+
+/* Padding variants */
+.container-default {
+  padding: 32px 24px;
+}
+
+.container-compact {
+  padding: 16px 20px;
+}
+
+.container-spacious {
+  padding: 48px 32px;
+}
+
+.container-none {
+  padding: 0;
+}
+
+/* Centered content */
+.container-centered .container-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Header styling */
+.container-header {
+  margin-bottom: 32px;
+}
+
+.container-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.container-subtitle {
+  font-size: 18px;
+  color: #b3b3b3;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Content area */
+.container-content {
+  /* Remove individual component margins for better control */
+}
+
+.container-content > * {
+  margin-top: 0;
+}
+
+.container-content > * + * {
+  margin-top: 24px;
+}
+
+/* Special spacing for form elements */
+.container-content .input-field,
+.container-content .rich-text-editor,
+.container-content .file-upload {
+  margin-bottom: 0; /* Remove individual margins */
+}
+
+/* Button groups at bottom */
+.container-content .step-actions,
+.container-content .form-actions,
+.container-content .page-actions {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #2d2d44;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .container-default,
+  .container-spacious {
+    padding: 24px 20px;
+  }
+  
+  .container-header {
+    margin-bottom: 24px;
+  }
+  
+  .container-title {
+    font-size: 28px;
+  }
+  
+  .container-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-default,
+  .container-compact,
+  .container-spacious {
+    padding: 20px 16px;
+  }
+  
+  .container-header {
+    margin-bottom: 20px;
+  }
+  
+  .container-title {
+    font-size: 24px;
+  }
+  
+  .container-subtitle {
+    font-size: 15px;
+  }
+  
+  .container-content > * + * {
+    margin-top: 20px;
+  }
+  
+  .container-content .step-actions,
+  .container-content .form-actions,
+  .container-content .page-actions {
+    margin-top: 32px;
+    padding-top: 20px;
+  }
+}

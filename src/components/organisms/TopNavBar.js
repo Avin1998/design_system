@@ -24,6 +24,8 @@ export default function TopNavBar({
       navigate('/');
     } else if (buttonId === 'design') {
       navigate('/system-design');
+    } else if (buttonId === 'email') {
+      navigate('/email');
     } else {
       alert(`${buttonId} section coming soon!`);
     }

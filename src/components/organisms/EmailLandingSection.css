@@ -1,0 +1,135 @@
+.email-landing-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  background: linear-gradient(135deg, #fff 0%, #0066ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  color: #ccc;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+  justify-items: center;
+}
+
+.gmail-option,
+.ai-pro-option {
+  width: 100%;
+  max-width: 400px;
+}
+
+.feature-comparison {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #2d2d44;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 32px;
+}
+
+.comparison-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.comparison-table {
+  display: grid;
+  gap: 12px;
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  align-items: center;
+}
+
+.comparison-row:first-child {
+  background: rgba(0, 102, 255, 0.1);
+  font-weight: 600;
+}
+
+.feature-name {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.gmail-feature,
+.pro-feature {
+  color: #ccc;
+  font-size: 14px;
+  text-align: center;
+}
+
+.pro-feature {
+  color: #0066ff;
+  font-weight: 500;
+}
+
+.comparison-row:first-child .gmail-feature,
+.comparison-row:first-child .pro-feature {
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .section-subtitle {
+    font-size: 16px;
+  }
+  
+  .options-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .comparison-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .gmail-feature,
+  .pro-feature {
+    text-align: center;
+  }
+  
+  .feature-name {
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+}

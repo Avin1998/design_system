@@ -72,11 +72,10 @@ export default function TrackDetailView({
     <div className="track-detail-view" {...props}>
       <div className="track-header">
         <Button 
-          variant="minimal" 
+          variant="back" 
           onClick={onBack}
           className="back-btn"
         >
-          <Icon name="FaArrowLeft" size={16} />
           Back to Patterns
         </Button>
         

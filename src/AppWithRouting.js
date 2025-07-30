@@ -8,6 +8,9 @@ import SystemDesignCanvasPage from './pages/SystemDesignCanvasPage';
 import TrackDetailPage from './pages/TrackDetailPage';
 import CodeAttemptPageContainer from './pages/CodeAttemptPageContainer';
 import ComponentShowcase from './pages/ComponentShowcase';
+import EmailLandingPage from './pages/EmailLandingPage';
+import GmailComposerPage from './pages/GmailComposerPage';
+import AIProFlowPage from './pages/AIProFlowPage';
 
 export default function AppWithRouting() {
   return (
@@ -21,6 +24,9 @@ export default function AppWithRouting() {
           <Route path="/showcase" element={<ComponentShowcase />} />
           <Route path="/track/:trackId" element={<TrackDetailPage />} />
           <Route path="/problem/:problemId" element={<CodeAttemptPageContainer />} />
+          <Route path="/email" element={<EmailLandingPage />} />
+          <Route path="/email/gmail-composer" element={<GmailComposerPage />} />
+          <Route path="/email/ai-pro-flow" element={<AIProFlowPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </MainLayout>
