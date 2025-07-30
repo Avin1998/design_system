@@ -18,10 +18,11 @@ export default function QuestionCard({
   onMouseLeave,
   onClick,
   showHint = true,
-  className = ''
+  className = '',
+  isExpanded = false // Add isExpanded as a controlled prop
 }) {
   const [showHintContent, setShowHintContent] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(state === brainStates.ACTIVE);
+  // Remove internal isExpanded state - use prop instead
 
   const {
     id,
@@ -32,9 +33,6 @@ export default function QuestionCard({
 
   const handleCardClick = () => {
     if (onClick) onClick();
-    if (state !== brainStates.ACTIVE) {
-      setIsExpanded(true);
-    }
   };
 
   const handleHintToggle = () => {

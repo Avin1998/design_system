@@ -22,7 +22,8 @@ export default function MentorBubble({
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
-    if (onToggle) onToggle(!isOpen);
+    // Don't call onToggle when just opening/closing the chat
+    // The mentor bubble should always stay visible
   };
 
   const handleSendMessage = () => {

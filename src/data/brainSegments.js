@@ -2,53 +2,57 @@
 // Maps brain regions to system design question categories
 
 export const brainSegments = {
-  // Main brain regions for system design
+  // Main brain regions for system design mapped to actual brain areas
   functionalRequirements: {
     id: 'functional-requirements',
     name: 'Functional Requirements',
-    position: { x: 30, y: 20, width: 25, height: 30 },
+    position: { x: 35, y: 25, width: 25, height: 20 },
     color: '#4f9cf9',
     hoverColor: '#6ba6f5',
     activeColor: '#0066ff',
     completedColor: '#00c853',
     description: 'Core features and capabilities',
-    svgPath: 'M30,20 Q55,15 55,35 Q55,50 45,50 Q30,50 25,35 Q25,25 30,20 Z'
+    // Frontal lobe area - responsible for planning and decision making
+    svgPath: 'M35,25 Q50,20 60,25 Q65,30 60,35 Q50,40 40,38 Q30,35 32,30 Q35,25 35,25 Z'
   },
   
   nonFunctionalRequirements: {
     id: 'non-functional-requirements', 
     name: 'Non-Functional Requirements',
-    position: { x: 60, y: 25, width: 25, height: 25 },
+    position: { x: 65, y: 25, width: 25, height: 20 },
     color: '#4f9cf9',
     hoverColor: '#6ba6f5', 
     activeColor: '#0066ff',
     completedColor: '#00c853',
     description: 'Performance, scalability, reliability',
-    svgPath: 'M60,25 Q85,20 85,40 Q85,50 75,50 Q60,50 55,40 Q55,30 60,25 Z'
+    // Parietal lobe area - responsible for processing and integration
+    svgPath: 'M65,25 Q80,22 85,30 Q88,38 82,42 Q75,45 68,42 Q62,38 63,32 Q65,25 65,25 Z'
   },
 
   capacityEstimation: {
     id: 'capacity-estimation',
     name: 'Capacity Estimation', 
-    position: { x: 35, y: 55, width: 20, height: 25 },
+    position: { x: 40, y: 45, width: 20, height: 20 },
     color: '#4f9cf9',
     hoverColor: '#6ba6f5',
     activeColor: '#0066ff', 
     completedColor: '#00c853',
     description: 'Scale, users, storage, bandwidth',
-    svgPath: 'M35,55 Q55,50 55,70 Q55,80 45,80 Q35,80 30,70 Q30,60 35,55 Z'
+    // Temporal lobe area - responsible for memory and processing
+    svgPath: 'M40,45 Q55,42 60,48 Q62,55 57,60 Q50,62 45,58 Q38,52 40,45 Z'
   },
 
   highLevelDesign: {
     id: 'high-level-design',
     name: 'High-Level Design',
-    position: { x: 60, y: 60, width: 25, height: 20 },
+    position: { x: 65, y: 50, width: 20, height: 15 },
     color: '#4f9cf9',
     hoverColor: '#6ba6f5',
     activeColor: '#0066ff',
     completedColor: '#00c853', 
     description: 'Architecture and system components',
-    svgPath: 'M60,60 Q85,55 85,75 Q85,80 75,80 Q60,80 55,75 Q55,65 60,60 Z'
+    // Occipital lobe area - responsible for visual processing and organization
+    svgPath: 'M65,50 Q75,48 80,52 Q82,58 78,62 Q72,65 68,62 Q63,58 65,50 Z'
   }
 };
 

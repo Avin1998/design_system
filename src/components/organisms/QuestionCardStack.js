@@ -15,11 +15,15 @@ export default function QuestionCardStack({
   onQuestionLeave,
   className = ''
 }) {
-  const [expandedCards, setExpandedCards] = useState(new Set([activeQuestionId]));
+  // Only the active question should be expanded
+  const [expandedCards, setExpandedCards] = useState(new Set());
 
   useEffect(() => {
+    // Only keep the active question expanded
     if (activeQuestionId) {
-      setExpandedCards(prev => new Set([...prev, activeQuestionId]));
+      setExpandedCards(new Set([activeQuestionId]));
+    } else {
+      setExpandedCards(new Set());
     }
   }, [activeQuestionId]);
 
@@ -42,17 +46,7 @@ export default function QuestionCardStack({
   };
 
   const handleQuestionClick = (questionId) => {
-    // Toggle expansion
-    setExpandedCards(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(questionId)) {
-        newSet.delete(questionId);
-      } else {
-        newSet.add(questionId);
-      }
-      return newSet;
-    });
-
+    // Simply pass the click to parent - expansion is controlled by activeQuestionId
     if (onQuestionClick) {
       onQuestionClick(questionId);
     }
@@ -96,7 +90,7 @@ export default function QuestionCardStack({
       {/* Question Cards */}
       <div className="card-stack-container">
         {questions.map((question, index) => {
-          const isExpanded = expandedCards.has(question.id) || activeQuestionId === question.id;
+          const isExpanded = activeQuestionId === question.id;
           
           return (
             <QuestionCard
@@ -111,6 +105,7 @@ export default function QuestionCardStack({
               onMouseLeave={() => onQuestionLeave && onQuestionLeave(question.id)}
               onClick={() => handleQuestionClick(question.id)}
               showHint={true}
+              isExpanded={isExpanded}
               className={`stack-card ${isExpanded ? 'expanded' : 'collapsed'}`}
             />
           );

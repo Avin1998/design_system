@@ -74,6 +74,7 @@ export default function SystemDesignRequirementsPage() {
   };
 
   const handleQuestionClick = (questionId) => {
+    // Toggle active state - clicking the same question closes it, clicking different opens it
     setActiveQuestionId(activeQuestionId === questionId ? null : questionId);
   };
 
@@ -235,7 +236,6 @@ export default function SystemDesignRequirementsPage() {
         {showMentor && (
           <MentorBubble
             isVisible={true}
-            onToggle={setShowMentor}
           />
         )}
       </div>
