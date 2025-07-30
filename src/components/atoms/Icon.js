@@ -25,10 +25,12 @@ const iconMap = {
   'chat': FiIcons.FiMessageCircle,
   
   // General icons
-  'progress': FiIcons.FiBarChart3,
-  'hint': FiIcons.FiLightbulb,
+  'progress': FiIcons.FiBarChart2,
+  'hint': FiIcons.FiZap, // Using Zap as lightbulb alternative
   'continue': FiIcons.FiArrowRight,
-  'back': FiIcons.FiArrowLeft
+  'back': FiIcons.FiArrowLeft,
+  'pause': FiIcons.FiPause,
+  'stop': FiIcons.FiStopCircle
 };
 
 export default function Icon({ 
