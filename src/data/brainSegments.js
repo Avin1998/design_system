@@ -6,56 +6,60 @@ export const brainSegments = {
   functionalRequirements: {
     id: 'functional-requirements',
     name: 'Functional Requirements',
-    position: { x: 25, y: 35, width: 25, height: 15 },
+    position: { x: 350, y: 200, width: 180, height: 120 },
     color: '#4f9cf9',
     hoverColor: '#6ba6f5',
     activeColor: '#0066ff',
     completedColor: '#00c853',
     description: 'Core features and capabilities',
     // Frontal lobe area - responsible for planning and decision making
-    svgPath: 'M25,35 Q35,25 45,28 Q50,30 47,38 Q40,42 30,40 Q23,38 25,35 Z',
+    // Positioned at the front of the brain (left side in profile view)
+    svgPath: 'M350,200 Q400,180 450,190 Q480,200 470,250 Q450,280 400,270 Q320,260 350,200 Z',
     anatomicalRegion: 'Frontal Lobe'
   },
   
   nonFunctionalRequirements: {
     id: 'non-functional-requirements', 
     name: 'Non-Functional Requirements',
-    position: { x: 50, y: 25, width: 30, height: 20 },
+    position: { x: 550, y: 150, width: 200, height: 160 },
     color: '#4f9cf9',
     hoverColor: '#6ba6f5', 
     activeColor: '#0066ff',
     completedColor: '#00c853',
     description: 'Performance, scalability, reliability',
     // Parietal lobe area - responsible for processing and integration
-    svgPath: 'M50,25 Q65,22 75,30 Q80,38 73,43 Q65,46 57,43 Q50,40 47,35 Q50,30 50,25 Z',
+    // Positioned at the top-back of the brain
+    svgPath: 'M550,150 Q650,140 750,180 Q780,220 760,260 Q720,300 650,290 Q580,280 550,240 Q530,200 550,150 Z',
     anatomicalRegion: 'Parietal Lobe'
   },
 
   capacityEstimation: {
     id: 'capacity-estimation',
     name: 'Capacity Estimation', 
-    position: { x: 25, y: 45, width: 25, height: 20 },
+    position: { x: 400, y: 350, width: 250, height: 180 },
     color: '#4f9cf9',
     hoverColor: '#6ba6f5',
     activeColor: '#0066ff', 
     completedColor: '#00c853',
     description: 'Scale, users, storage, bandwidth',
     // Temporal lobe area - responsible for memory and processing
-    svgPath: 'M30,45 Q40,48 47,52 Q50,58 45,62 Q37,65 30,62 Q23,58 25,52 Q27,48 30,45 Z',
+    // Positioned at the side-bottom of the brain
+    svgPath: 'M400,350 Q500,360 600,380 Q650,420 620,480 Q580,520 500,510 Q420,500 380,460 Q360,420 400,350 Z',
     anatomicalRegion: 'Temporal Lobe'
   },
 
   highLevelDesign: {
     id: 'high-level-design',
     name: 'High-Level Design',
-    position: { x: 57, y: 50, width: 23, height: 20 },
+    position: { x: 750, y: 280, width: 180, height: 160 },
     color: '#4f9cf9',
     hoverColor: '#6ba6f5',
     activeColor: '#0066ff',
     completedColor: '#00c853', 
     description: 'Architecture and system components',
     // Occipital lobe area - responsible for visual processing and organization
-    svgPath: 'M57,50 Q70,48 77,55 Q80,62 73,68 Q65,70 60,67 Q53,62 55,55 Q57,50 57,50 Z',
+    // Positioned at the back of the brain (right side in profile view)
+    svgPath: 'M750,280 Q820,270 880,300 Q900,340 890,380 Q870,420 820,430 Q770,440 740,400 Q720,360 750,280 Z',
     anatomicalRegion: 'Occipital Lobe'
   }
 };
@@ -68,9 +72,9 @@ export const questionToBrainMapping = {
   'high-level-design': 'highLevelDesign'
 };
 
-// Brain SVG viewBox and dimensions
+// Brain SVG viewBox and dimensions (matching anatomical brain.svg)
 export const brainDimensions = {
-  viewBox: '0 0 120 100',
+  viewBox: '0 0 1024 731',
   width: 400,
   height: 300
 };
