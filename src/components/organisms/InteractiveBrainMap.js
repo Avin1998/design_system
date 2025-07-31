@@ -85,20 +85,66 @@ export default function InteractiveBrainMap({
             </filter>
           </defs>
 
-          {/* Brain Base Shape - More anatomically correct brain silhouette */}
+          {/* =================================================================
+              BRAIN SVG SECTION - EASILY REPLACEABLE
+              =================================================================
+              This section contains the brain visualization SVG.
+              To replace with a custom brain SVG:
+              1. Replace the entire <g className="brain-base"> section below
+              2. Update brainSegments.js with new svgPath coordinates
+              3. Adjust neural connections if needed
+              ================================================================= */}
+          
+          {/* Anatomically Accurate Brain with Four Distinct Lobes */}
           <g className="brain-base">
-            {/* Main brain outline */}
+            {/* Main brain outline - more realistic brain shape */}
             <path
-              d="M30,25 Q35,18 45,20 Q55,15 70,18 Q80,20 90,25 Q95,30 92,40 Q90,50 85,60 Q80,70 70,75 Q60,78 50,75 Q40,72 32,65 Q25,55 28,45 Q30,35 30,25 Z"
+              d="M25,35 Q30,20 45,22 Q55,18 70,20 Q85,22 90,35 Q95,45 90,55 Q85,65 75,70 Q65,75 55,72 Q45,75 35,70 Q25,65 20,55 Q15,45 25,35 Z"
               fill="url(#brainGradient)"
               stroke="rgba(79, 156, 249, 0.15)"
               strokeWidth="1"
               className="brain-outline"
             />
             
+            {/* Frontal Lobe - front part of brain (planning, decision making) */}
+            <path
+              d="M25,35 Q35,25 45,28 Q50,30 47,38 Q40,42 30,40 Q23,38 25,35 Z"
+              fill="rgba(79, 156, 249, 0.1)"
+              stroke="rgba(79, 156, 249, 0.3)"
+              strokeWidth="0.5"
+              className="frontal-lobe"
+            />
+            
+            {/* Parietal Lobe - top-back part (processing, integration) */}
+            <path
+              d="M50,25 Q65,22 75,30 Q80,38 73,43 Q65,46 57,43 Q50,40 47,35 Q50,30 50,25 Z"
+              fill="rgba(79, 156, 249, 0.1)"
+              stroke="rgba(79, 156, 249, 0.3)"
+              strokeWidth="0.5"
+              className="parietal-lobe"
+            />
+            
+            {/* Temporal Lobe - side part (memory, processing) */}
+            <path
+              d="M30,45 Q40,48 47,52 Q50,58 45,62 Q37,65 30,62 Q23,58 25,52 Q27,48 30,45 Z"
+              fill="rgba(79, 156, 249, 0.1)"
+              stroke="rgba(79, 156, 249, 0.3)"
+              strokeWidth="0.5"
+              className="temporal-lobe"
+            />
+            
+            {/* Occipital Lobe - back part (visual processing) */}
+            <path
+              d="M57,50 Q70,48 77,55 Q80,62 73,68 Q65,70 60,67 Q53,62 55,55 Q57,50 57,50 Z"
+              fill="rgba(79, 156, 249, 0.1)"
+              stroke="rgba(79, 156, 249, 0.3)"
+              strokeWidth="0.5"
+              className="occipital-lobe"
+            />
+            
             {/* Brain stem */}
             <path
-              d="M55,75 Q58,82 60,85 Q62,88 60,90 Q58,92 55,90 Q52,88 54,85 Q55,82 55,75 Z"
+              d="M55,72 Q58,78 60,82 Q62,85 60,87 Q58,89 55,87 Q52,85 54,82 Q55,78 55,72 Z"
               fill="url(#brainGradient)"
               stroke="rgba(79, 156, 249, 0.15)"
               strokeWidth="1"
@@ -107,34 +153,43 @@ export default function InteractiveBrainMap({
             
             {/* Cerebellum */}
             <path
-              d="M35,65 Q45,70 55,65 Q60,68 55,72 Q45,75 35,72 Q30,68 35,65 Z"
+              d="M35,62 Q45,67 55,62 Q60,65 55,69 Q45,72 35,69 Q30,65 35,62 Z"
               fill="url(#brainGradient)"
               stroke="rgba(79, 156, 249, 0.15)"
               strokeWidth="1"
               className="cerebellum"
             />
             
-            {/* Brain sulci/folds for texture */}
+            {/* Brain sulci/folds for anatomical detail */}
             <path
-              d="M40,30 Q50,32 60,30"
+              d="M30,35 Q40,37 50,35"
               fill="none"
-              stroke="rgba(79, 156, 249, 0.2)"
+              stroke="rgba(79, 156, 249, 0.3)"
               strokeWidth="0.5"
               className="brain-fold"
             />
             <path
-              d="M45,45 Q55,47 65,45"
+              d="M40,50 Q50,52 60,50"
               fill="none"
-              stroke="rgba(79, 156, 249, 0.2)"
+              stroke="rgba(79, 156, 249, 0.3)"
               strokeWidth="0.5"
               className="brain-fold"
             />
             <path
-              d="M42,55 Q52,57 62,55"
+              d="M35,45 Q45,47 55,45"
               fill="none"
-              stroke="rgba(79, 156, 249, 0.2)"
+              stroke="rgba(79, 156, 249, 0.3)"
               strokeWidth="0.5"
               className="brain-fold"
+            />
+            
+            {/* Central sulcus (divides frontal and parietal) */}
+            <path
+              d="M47,30 Q48,40 50,50"
+              fill="none"
+              stroke="rgba(79, 156, 249, 0.4)"
+              strokeWidth="0.8"
+              className="central-sulcus"
             />
           </g>
 
@@ -152,43 +207,61 @@ export default function InteractiveBrainMap({
             />
           ))}
 
-          {/* Neural connections (decorative) - More realistic pathways */}
+          {/* Neural connections (anatomically inspired) - More realistic pathways */}
           <g className="neural-connections" opacity="0.4">
-            {/* Connections between brain regions */}
+            {/* Connections between brain regions following neural pathways */}
+            
+            {/* Frontal to Parietal connection */}
             <line 
-              x1="50" y1="32" x2="68" y2="35"
+              x1="40" y1="35" x2="58" y2="38"
               stroke="#4f9cf9" 
               strokeWidth="1"
               strokeDasharray="3,2"
               className="neural-line"
             />
+            
+            {/* Parietal to Occipital connection */}
             <line 
-              x1="52" y1="50" x2="72" y2="55"
+              x1="65" y1="45" x2="68" y2="58"
               stroke="#4f9cf9" 
               strokeWidth="1"
               strokeDasharray="3,2"
               className="neural-line"
             />
+            
+            {/* Frontal to Temporal connection */}
             <line 
-              x1="45" y1="40" x2="48" y2="48"
-              stroke="#4f9cf9" 
-              strokeWidth="1"
-              strokeDasharray="2,3"
-              className="neural-line"
-            />
-            <line 
-              x1="58" y1="42" x2="70" y2="52"
+              x1="35" y1="42" x2="38" y2="50"
               stroke="#4f9cf9" 
               strokeWidth="1"
               strokeDasharray="2,3"
               className="neural-line"
             />
             
-            {/* Neural nodes */}
-            <circle cx="50" cy="32" r="1.5" fill="#66b3ff" opacity="0.8" className="neural-node" />
-            <circle cx="68" cy="35" r="1.5" fill="#66b3ff" opacity="0.8" className="neural-node" />
-            <circle cx="52" cy="50" r="1.5" fill="#66b3ff" opacity="0.8" className="neural-node" />
-            <circle cx="72" cy="55" r="1.5" fill="#66b3ff" opacity="0.8" className="neural-node" />
+            {/* Temporal to Occipital connection */}
+            <line 
+              x1="45" y1="55" x2="62" y2="58"
+              stroke="#4f9cf9" 
+              strokeWidth="1"
+              strokeDasharray="2,3"
+              className="neural-line"
+            />
+            
+            {/* Central connection (corpus callosum representation) */}
+            <line 
+              x1="47" y1="35" x2="50" y2="50"
+              stroke="#4f9cf9" 
+              strokeWidth="1.5"
+              strokeDasharray="4,2"
+              className="neural-line major-connection"
+            />
+            
+            {/* Neural nodes at key connection points */}
+            <circle cx="40" cy="35" r="1.5" fill="#66b3ff" opacity="0.8" className="neural-node" />
+            <circle cx="58" cy="38" r="1.5" fill="#66b3ff" opacity="0.8" className="neural-node" />
+            <circle cx="38" cy="50" r="1.5" fill="#66b3ff" opacity="0.8" className="neural-node" />
+            <circle cx="62" cy="58" r="1.5" fill="#66b3ff" opacity="0.8" className="neural-node" />
+            <circle cx="48" cy="42" r="2" fill="#66b3ff" opacity="0.9" className="neural-node major-node" />
           </g>
         </svg>
       </div>
