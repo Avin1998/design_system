@@ -1,6 +1,3 @@
-import React from 'react';
-import Tooltip from '../atoms/Tooltip';
-import Badge from '../atoms/Badge';
 import { brainStates } from '../../data/brainSegments';
 import './BrainSegment.css';
 
@@ -42,7 +39,7 @@ export default function BrainSegment({
   const getSegmentOpacity = () => {
     switch (state) {
       case brainStates.INACTIVE:
-        return 0.4;
+        return 0.0;
       case brainStates.HOVER:
         return 0.8;
       case brainStates.ACTIVE:
@@ -92,29 +89,5 @@ export default function BrainSegment({
     </g>
   );
 
-  if (!showTooltip) {
-    return segmentElement;
-  }
-
-  return (
-    <Tooltip
-      content={
-        <div className="brain-segment-tooltip">
-          <div className="brain-segment-tooltip-title">{name}</div>
-          <div className="brain-segment-tooltip-description">{description}</div>
-          <Badge 
-            status={state} 
-            icon={state === brainStates.COMPLETED ? 'completed' : state === brainStates.ACTIVE ? 'active' : null}
-            className="brain-segment-tooltip-badge"
-          >
-            {state}
-          </Badge>
-        </div>
-      }
-      position="top"
-      delay={300}
-    >
-      {segmentElement}
-    </Tooltip>
-  );
+  return segmentElement;
 }

@@ -4,15 +4,17 @@
 
 .brain-segment-path {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  stroke-width: 10;
+  filter: drop-shadow(0 0 8px currentColor) !important;
 }
 
 .brain-segment-path:hover {
-  stroke-width: 2;
+  stroke-width: 3;
   filter: drop-shadow(0 0 8px currentColor) !important;
 }
 
 .brain-segment-hovered .brain-segment-path {
-  stroke-width: 2;
+  stroke-width: 3;
   filter: drop-shadow(0 0 8px currentColor) !important;
   animation: brainPulse 1.5s ease-in-out infinite;
 }
@@ -27,31 +29,6 @@
 
 .brain-segment-indicator {
   animation: indicatorPulse 2s ease-in-out infinite;
-}
-
-/* Tooltip styling */
-.brain-segment-tooltip {
-  text-align: center;
-  max-width: 200px;
-}
-
-.brain-segment-tooltip-title {
-  font-weight: 600;
-  font-size: 12px;
-  margin-bottom: 4px;
-  color: #ffffff;
-}
-
-.brain-segment-tooltip-description {
-  font-size: 11px;
-  color: #cccccc;
-  margin-bottom: 6px;
-  line-height: 1.3;
-}
-
-.brain-segment-tooltip-badge {
-  font-size: 9px;
-  padding: 2px 6px;
 }
 
 /* Animations */
