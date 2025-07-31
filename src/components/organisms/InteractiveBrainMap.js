@@ -68,7 +68,7 @@ export default function InteractiveBrainMap({
           width="100%"
           height="100%"
         >
-          {/* Brain outline/background */}
+          {/* SVG Definitions */}
           <defs>
             <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" style={{ stopColor: '#1a1a2f', stopOpacity: 0.8 }} />
@@ -85,7 +85,7 @@ export default function InteractiveBrainMap({
             </filter>
           </defs>
 
-          {/* Brain Segments */}
+          {/* Brain Segments - Four Distinct Lobes */}
           {Object.entries(brainSegments).map(([key, segment]) => (
             <BrainSegment
               key={segment.id}
