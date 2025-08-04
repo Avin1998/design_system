@@ -1,9 +1,16 @@
-import { brainStates } from '../../data/brainSegments';
 import './BrainSegment.css';
+
+// Brain interaction states
+export const BRAIN_STATES = {
+  INACTIVE: 'inactive',
+  HOVER: 'hover', 
+  ACTIVE: 'active',
+  COMPLETED: 'completed'
+};
 
 export default function BrainSegment({
   segment,
-  state = brainStates.INACTIVE,
+  state = BRAIN_STATES.INACTIVE,
   isHovered = false,
   onClick,
   onMouseEnter,
@@ -25,11 +32,11 @@ export default function BrainSegment({
   // Determine colors based on state
   const getSegmentColor = () => {
     switch (state) {
-      case brainStates.COMPLETED:
+      case BRAIN_STATES.COMPLETED:
         return completedColor;
-      case brainStates.ACTIVE:
+      case BRAIN_STATES.ACTIVE:
         return activeColor;
-      case brainStates.HOVER:
+      case BRAIN_STATES.HOVER:
         return hoverColor;
       default:
         return color;
@@ -38,13 +45,13 @@ export default function BrainSegment({
 
   const getSegmentOpacity = () => {
     switch (state) {
-      case brainStates.INACTIVE:
+      case BRAIN_STATES.INACTIVE:
         return 0.0;
-      case brainStates.HOVER:
+      case BRAIN_STATES.HOVER:
         return 0.8;
-      case brainStates.ACTIVE:
+      case BRAIN_STATES.ACTIVE:
         return 0.9;
-      case brainStates.COMPLETED:
+      case BRAIN_STATES.COMPLETED:
         return 1;
       default:
         return 0.6;

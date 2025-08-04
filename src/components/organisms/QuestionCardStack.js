@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import QuestionCard from '../molecules/QuestionCard';
 import ProgressBar from '../atoms/ProgressBar';
-import { brainStates } from '../../data/brainSegments';
 import './QuestionCardStack.css';
 
 export default function QuestionCardStack({
@@ -34,15 +33,15 @@ export default function QuestionCardStack({
   // Determine question state
   const getQuestionState = (questionId) => {
     if (answers[questionId]?.trim().length > 0) {
-      return brainStates.COMPLETED;
+      return 'completed';
     }
     if (activeQuestionId === questionId) {
-      return brainStates.ACTIVE;
+      return 'active';
     }
     if (hoveredQuestionId === questionId) {
-      return brainStates.HOVER;
+      return 'hover';
     }
-    return brainStates.INACTIVE;
+    return 'inactive';
   };
 
   const handleQuestionClick = (questionId) => {

@@ -1,19 +1,58 @@
 {
-  "name": "design-system-react",
+  "name": "@avin1998/design-system-react",
   "version": "1.0.0",
-  "private": true,
+  "description": "A React design system with atomic design principles - atoms, molecules, and organisms",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "keywords": [
+    "react",
+    "design-system",
+    "atomic-design",
+    "components",
+    "ui-library"
+  ],
+  "author": "Avin1998",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Avin1998/design_system.git"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "dependencies": {
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^6.23.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-image": "^3.0.3",
+    "@rollup/plugin-node-resolve": "^15.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.5.0",
-    "react-router-dom": "^6.23.1",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "rollup": "^2.79.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:lib": "rollup -c",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepublishOnly": "npm run build:lib"
   },
   "browserslist": {
     "production": [

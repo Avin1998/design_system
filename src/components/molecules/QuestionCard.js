@@ -4,7 +4,6 @@ import Button from '../atoms/Button';
 import Badge from '../atoms/Badge';
 import Icon from '../atoms/Icon';
 import Tooltip from '../atoms/Tooltip';
-import { brainStates } from '../../data/brainSegments';
 import './QuestionCard.css';
 
 export default function QuestionCard({
@@ -12,7 +11,7 @@ export default function QuestionCard({
   index,
   value = '',
   onChange,
-  state = brainStates.INACTIVE,
+  state = 'inactive',
   isHovered = false,
   onMouseEnter,
   onMouseLeave,

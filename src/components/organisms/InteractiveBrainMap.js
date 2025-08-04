@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import BrainSegment from '../molecules/BrainSegment';
-import { brainSegments, brainDimensions, brainStates } from '../../data/brainSegments';
+import BrainSegment, { BRAIN_STATES } from '../molecules/BrainSegment';
 import './InteractiveBrainMap.css';
 
 export default function InteractiveBrainMap({
+  brainSegments = {},
+  brainDimensions = { viewBox: '0 0 1024 731', width: 400, height: 300 },
   activeSegmentId = null,
   hoveredSegmentId = null,
   completedSegments = [],
@@ -17,15 +18,15 @@ export default function InteractiveBrainMap({
   // Determine segment state
   const getSegmentState = (segmentId) => {
     if (completedSegments.includes(segmentId)) {
-      return brainStates.COMPLETED;
+      return BRAIN_STATES.COMPLETED;
     }
     if (activeSegmentId === segmentId) {
-      return brainStates.ACTIVE;
+      return BRAIN_STATES.ACTIVE;
     }
     if (hoveredSegmentId === segmentId || internalHoveredSegment === segmentId) {
-      return brainStates.HOVER;
+      return BRAIN_STATES.HOVER;
     }
-    return brainStates.INACTIVE;
+    return BRAIN_STATES.INACTIVE;
   };
 
   const handleSegmentClick = (segmentId) => {

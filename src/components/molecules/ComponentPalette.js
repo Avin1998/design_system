@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import DraggableComponent from '../atoms/DraggableComponent';
-import { canvasComponents, componentCategories } from '../../data/canvasComponents';
 import './ComponentPalette.css';
 
-export default function ComponentPalette({ className = '' }) {
+export default function ComponentPalette({ 
+  components = [], 
+  categories = ['All'], 
+  className = '' 
+}) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredComponents = canvasComponents.filter(component => {
+  const filteredComponents = components.filter(component => {
     const matchesCategory = selectedCategory === 'All' || component.category === selectedCategory;
     const matchesSearch = component.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          component.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -34,14 +37,13 @@ export default function ComponentPalette({ className = '' }) {
         >
           All
         </button>
-        {componentCategories.map(category => (
+        {categories.filter(cat => cat !== 'All').map(category => (
           <button
-            key={category.id}
-            className={`category-tab ${selectedCategory === category.id ? 'active' : ''}`}
-            onClick={() => setSelectedCategory(category.id)}
-            style={{ '--category-color': category.color }}
+            key={category}
+            className={`category-tab ${selectedCategory === category ? 'active' : ''}`}
+            onClick={() => setSelectedCategory(category)}
           >
-            {category.name}
+            {category}
           </button>
         ))}
       </div>
