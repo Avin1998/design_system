@@ -26,7 +26,6 @@
   /* The card's artwork is defined via a CSS custom property so each instance can
      * supply its own background image. If the variable is not set on the element,
      * fallback to a default dark patterned background. */
-  background-image: var(--bg-url, url('../../assets/background.png'));
   background-size: cover;
   background-position: center;
   z-index: 1;

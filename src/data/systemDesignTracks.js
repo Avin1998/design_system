@@ -1,13 +1,12 @@
 // System Design Track Data
 // Import images for system design tracks
-import defaultBg from '../assets/background.png';
 
 export const systemDesignTracks = [
   {
     id: 'whatsapp',
     name: 'Build WhatsApp',
     description: 'Design a scalable messaging system like WhatsApp',
-    image: defaultBg, // Will be replaced with specific images later
+     // Will be replaced with specific images later
     progress: 0.3,
     status: 'active',
     difficulty: 'hard',
@@ -20,7 +19,7 @@ export const systemDesignTracks = [
     id: 'redis',
     name: 'Design Redis',
     description: 'Build an in-memory key-value store like Redis',
-    image: defaultBg,
+    
     progress: 1,
     status: 'done',
     difficulty: 'hard',
@@ -33,7 +32,7 @@ export const systemDesignTracks = [
     id: 'youtube',
     name: 'Design YouTube',
     description: 'Create a video streaming platform architecture',
-    image: defaultBg,
+    
     progress: 0,
     status: 'inactive',
     difficulty: 'hard',
@@ -46,7 +45,7 @@ export const systemDesignTracks = [
     id: 'uber',
     name: 'Design Uber',
     description: 'Build a location-based ride-sharing system',
-    image: defaultBg,
+    
     progress: 0.6,
     status: 'active',
     difficulty: 'medium',
@@ -59,7 +58,7 @@ export const systemDesignTracks = [
     id: 'twitter',
     name: 'Design Twitter',
     description: 'Create a social media platform with real-time feeds',
-    image: defaultBg,
+    
     progress: 0,
     status: 'inactive',
     difficulty: 'hard',
@@ -72,7 +71,7 @@ export const systemDesignTracks = [
     id: 'netflix',
     name: 'Design Netflix',
     description: 'Build a video streaming and recommendation system',
-    image: defaultBg,
+    
     progress: 0,
     status: 'inactive',
     difficulty: 'hard',
@@ -85,7 +84,7 @@ export const systemDesignTracks = [
     id: 'amazon',
     name: 'Design Amazon',
     description: 'Create an e-commerce platform with inventory management',
-    image: defaultBg,
+    
     progress: 0,
     status: 'inactive',
     difficulty: 'hard',
@@ -98,7 +97,7 @@ export const systemDesignTracks = [
     id: 'slack',
     name: 'Design Slack',
     description: 'Build a team collaboration and messaging platform',
-    image: defaultBg,
+    
     progress: 0,
     status: 'inactive',
     difficulty: 'medium',
