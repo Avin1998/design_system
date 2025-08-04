@@ -16,11 +16,31 @@ This package has the following peer dependencies that you need to install in you
 npm install react react-dom
 ```
 
+## ⚠️ Important: Import Styles
+
+**You must import the CSS file for components to have proper styling:**
+
+```javascript
+// Import the CSS styles (REQUIRED)
+import '@avin1998/design-system-react/lib/index.css';
+
+// Then import components
+import { 
+  Button, 
+  Card, 
+  Header, 
+  MainLayout 
+} from '@avin1998/design-system-react';
+```
+
 ## Usage
 
 ### Basic Import
 
 ```javascript
+// ALWAYS import CSS first
+import '@avin1998/design-system-react/lib/index.css';
+
 import { 
   Button, 
   Card, 
@@ -33,6 +53,11 @@ import {
 
 ```javascript
 import React, { useState } from 'react';
+
+// REQUIRED: Import styles first
+import '@avin1998/design-system-react/lib/index.css';
+
+// Then import components
 import { 
   MainLayout, 
   Header, 
@@ -128,11 +153,14 @@ All components accept data as props instead of using hardcoded values:
 ```
 
 ### Flexible Styling
-Components come with default CSS that can be customized:
+Components come with default CSS that must be imported:
 
 ```javascript
+// REQUIRED for styling - import this at the top of your main app file
 import '@avin1998/design-system-react/lib/index.css';
 ```
+
+**Without importing the CSS file, components will render as unstyled HTML elements.**
 
 ### Brain States Constants
 For components that work with brain interaction states:
@@ -235,9 +263,26 @@ MIT
 If migrating from the original codebase:
 
 1. Install the npm package
-2. Replace direct file imports with package imports
-3. Pass data as props instead of importing data files
-4. Import the CSS file for styling
+2. **Import the CSS file first**: `import '@avin1998/design-system-react/lib/index.css';`
+3. Replace direct file imports with package imports
+4. Pass data as props instead of importing data files
 5. Update any hardcoded constants (e.g., use `BRAIN_STATES` from the package)
 
 For more detailed examples, refer to the `example/` folder in this repository.
+
+## ⚠️ Troubleshooting Styles
+
+**Problem**: Components import successfully but have no styling (appear as plain HTML)?
+
+**Solution**: You must import the CSS file. Add this line to your main app file:
+
+```javascript
+import '@avin1998/design-system-react/lib/index.css';
+```
+
+**Common Issues**:
+- Missing CSS import (most common)
+- Wrong CSS import path
+- CSS imported in wrong file (should be in main app file)
+
+See `TEST_STYLING.md` for a complete troubleshooting guide.
