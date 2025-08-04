@@ -1,6 +1,6 @@
 {
   "name": "@avinash_tyagi/design-system-react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A React design system with atomic design principles - atoms, molecules, and organisms",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
