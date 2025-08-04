@@ -6,7 +6,7 @@ import postcss from 'rollup-plugin-postcss';
 import image from '@rollup/plugin-image';
 
 export default {
-  input: 'src/lib/index.js',
+  input: 'src/index.js',
   output: [
     {
       file: 'lib/index.js',

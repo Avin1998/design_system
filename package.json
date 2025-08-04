@@ -1,5 +1,5 @@
 {
-  "name": "@avin1998/design-system-react",
+  "name": "@avinash_tyagi/design-system-react",
   "version": "1.0.0",
   "description": "A React design system with atomic design principles - atoms, molecules, and organisms",
   "main": "lib/index.js",
@@ -16,7 +16,7 @@
     "components",
     "ui-library"
   ],
-  "author": "Avin1998",
+  "author": "avinash_tyagi",
   "license": "MIT",
   "repository": {
     "type": "git",
