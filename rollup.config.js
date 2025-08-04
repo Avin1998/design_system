@@ -42,5 +42,20 @@ export default {
     }),
     image()
   ],
-  external: ['react', 'react-dom', 'react-icons', 'react-router-dom']
+  external: [
+    'react', 
+    'react-dom', 
+    'react-icons', 
+    'react-icons/fa',
+    'react-icons/md',
+    'react-icons/ai',
+    'react-icons/bs',
+    'react-icons/fi',
+    'react-icons/go',
+    'react-icons/hi',
+    'react-icons/io',
+    'react-icons/ri',
+    'react-icons/ti',
+    'react-router-dom'
+  ]
 };
