@@ -60,7 +60,7 @@ export default function QuestionCard({
       className={cardClasses}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      onClick={handleCardClick}
+      onClick={!isExpanded ? handleCardClick : undefined}
     >
       {/* Card Header */}
       <div className="question-card-header">
@@ -96,6 +96,7 @@ export default function QuestionCard({
               maxLength={2000}
               enableSpeechToText={true}
               className="question-card-textarea"
+              onClick={(e) => e.stopPropagation()}
             />
           </div>
 
@@ -103,7 +104,7 @@ export default function QuestionCard({
             <div className="question-card-hint">
               <Button
                 variant="minimal"
-                onClick={handleHintToggle}
+                onClick={(e) => { e.stopPropagation(); handleHintToggle(); }}
                 className="hint-toggle-button"
               >
                 <Icon name="hint" size={14} variant="hint" />
