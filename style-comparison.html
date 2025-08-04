@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Comparison - Design System</title>
+    <style>
+        body {
+            background: #0d0d17;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 12px;
+        }
+        .section h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .without-styles h2 { color: #ff6f61; }
+        .with-styles h2 { color: #06f; }
+        
+        /* Simulate unstyled components */
+        .unstyled-btn {
+            background: transparent;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            color: white;
+            margin: 5px;
+        }
+        .unstyled-badge {
+            border: 1px solid #ccc;
+            padding: 2px 4px;
+            margin: 5px;
+            font-size: 12px;
+        }
+        .unstyled-progress {
+            border: 1px solid #ccc;
+            height: 20px;
+            width: 200px;
+            margin: 5px;
+        }
+        .unstyled-progress-fill {
+            background: #ccc;
+            height: 100%;
+            width: 60%;
+        }
+    </style>
+    <!-- Import the actual CSS for styled version -->
+    <link rel="stylesheet" href="./lib/index.css">
+</head>
+<body>
+    <h1 style="text-align: center; margin-bottom: 40px;">Design System Style Comparison</h1>
+    
+    <div class="comparison">
+        <div class="section without-styles">
+            <h2>❌ WITHOUT CSS Import</h2>
+            <p>Components render as plain HTML:</p>
+            
+            <div style="margin: 20px 0;">
+                <button class="unstyled-btn">Primary Button</button>
+                <button class="unstyled-btn">Secondary Button</button>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <span class="unstyled-badge">Success</span>
+                <span class="unstyled-badge">Warning</span>
+                <span class="unstyled-badge">Error</span>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <div class="unstyled-progress">
+                    <div class="unstyled-progress-fill"></div>
+                </div>
+            </div>
+            
+            <p><small>This is what users see when they forget to import the CSS file.</small></p>
+        </div>
+        
+        <div class="section with-styles">
+            <h2>✅ WITH CSS Import</h2>
+            <p>Components render with proper styling:</p>
+            
+            <div style="margin: 20px 0;">
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-secondary">Secondary Button</button>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <span class="badge badge-success">Success</span>
+                <span class="badge badge-warning">Warning</span>
+                <span class="badge badge-danger">Error</span>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <div class="progress-bar" style="height: 8px; width: 200px; background: #ffffff1a; border-radius: 4px; overflow: hidden;">
+                    <div class="progress-bar-fill" style="width: 60%;"></div>
+                </div>
+            </div>
+            
+            <p><small>This is what users see when they properly import the CSS file.</small></p>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background: #1a1a2f; border-radius: 12px;">
+        <h3>Solution</h3>
+        <p>Always import the CSS file in your main app:</p>
+        <pre style="background: #0d0d17; padding: 15px; border-radius: 8px; text-align: left; max-width: 500px; margin: 0 auto;"><code>import '@avin1998/design-system-react/lib/index.css';</code></pre>
+    </div>
+</body>
+</html>
