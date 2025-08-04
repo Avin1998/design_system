@@ -75,16 +75,16 @@ export default function BrainSegment({
         onMouseLeave={onMouseLeave}
         style={{
           cursor: onClick ? 'pointer' : 'default',
-          filter: state === brainStates.COMPLETED 
+          filter: state === BRAIN_STATES.COMPLETED 
             ? `drop-shadow(0 0 8px ${completedColor}40)` 
-            : state === brainStates.ACTIVE
+            : state === BRAIN_STATES.ACTIVE
             ? `drop-shadow(0 0 6px ${activeColor}60)`
             : 'none'
         }}
       />
       
       {/* Status indicator */}
-      {state === brainStates.COMPLETED && (
+      {state === BRAIN_STATES.COMPLETED && (
         <circle
           cx={segment.position.x + segment.position.width/2}
           cy={segment.position.y + segment.position.height/2}
