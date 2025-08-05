@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import CanvasElement from '../atoms/CanvasElement';
 import ConnectionLine from '../atoms/ConnectionLine';
-import './DesignCanvas.css';
 
 export default function DesignCanvas({ 
   elements = [], 

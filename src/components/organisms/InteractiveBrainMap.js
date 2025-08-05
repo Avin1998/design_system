@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BrainSegment from '../molecules/BrainSegment';
 import { brainSegments, brainDimensions, brainStates } from '../../data/brainSegments';
-import './InteractiveBrainMap.css';
 
 export default function InteractiveBrainMap({
   activeSegmentId = null,

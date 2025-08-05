@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Card from './Card';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import './CardCarousel.css';
 
 export default function CardCarousel({ items, onCardClick, onContinue, onCloseCard }) {
   const [currentIndex, setCurrentIndex] = useState(0);

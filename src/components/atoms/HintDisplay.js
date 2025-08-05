@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FiHelpCircle, FiX } from 'react-icons/fi';
-import './HintDisplay.css';
 
 export default function HintDisplay({ hint, className = '' }) {
   const [isVisible, setIsVisible] = useState(false);

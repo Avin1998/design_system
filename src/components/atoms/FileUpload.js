@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import './FileUpload.css';
 
 export default function FileUpload({ 
   onFileSelect, 

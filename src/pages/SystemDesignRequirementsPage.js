@@ -9,7 +9,6 @@ import { systemDesignTracks } from '../data/systemDesignTracks';
 import { systemDesignQuestions } from '../data/systemDesignQuestions';
 import { brainSegments, questionToBrainMapping, brainStates } from '../data/brainSegments';
 import { useHoverSyncManager } from '../components/molecules/HoverSyncEffect';
-import './SystemDesignRequirementsPage.css';
 
 export default function SystemDesignRequirementsPage() {
   const { trackId } = useParams();

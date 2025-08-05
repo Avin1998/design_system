@@ -4,7 +4,6 @@ import Badge from '../components/atoms/Badge';
 import Rating from '../components/atoms/Rating';
 import Button from '../components/atoms/Button';
 import MetricsCard from '../components/molecules/MetricsCard';
-import './ComponentShowcase.css';
 
 export default function ComponentShowcase() {
   const [activeDemo, setActiveDemo] = useState('atoms');

@@ -1,7 +1,6 @@
 import React from 'react';
 import ProBadge from '../atoms/ProBadge';
 import Button from '../atoms/Button';
-import './EmailOptionCard.css';
 
 export default function EmailOptionCard({ 
   title,

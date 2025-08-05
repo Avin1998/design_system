@@ -6,7 +6,6 @@ import ProBadge from '../components/atoms/ProBadge';
 import ComponentPalette from '../components/molecules/ComponentPalette';
 import DesignCanvas from '../components/organisms/DesignCanvas';
 import { systemDesignTracks } from '../data/systemDesignTracks';
-import './SystemDesignCanvasPage.css';
 
 export default function SystemDesignCanvasPage() {
   const { trackId } = useParams();

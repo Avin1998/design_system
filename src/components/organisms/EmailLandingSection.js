@@ -1,6 +1,5 @@
 import React from 'react';
 import EmailOptionCard from '../molecules/EmailOptionCard';
-import './EmailLandingSection.css';
 
 export default function EmailLandingSection({ onOptionSelect }) {
   const gmailOption = {

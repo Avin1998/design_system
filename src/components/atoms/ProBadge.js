@@ -1,5 +1,4 @@
 import React from 'react';
-import './ProBadge.css';
 
 export default function ProBadge({ 
   size = 'small',

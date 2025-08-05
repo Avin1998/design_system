@@ -1,5 +1,4 @@
 import React from 'react';
-import './DraggableComponent.css';
 
 export default function DraggableComponent({ 
   component, 

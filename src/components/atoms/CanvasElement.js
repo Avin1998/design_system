@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FiX, FiEdit2, FiLink } from 'react-icons/fi';
-import './CanvasElement.css';
 
 export default function CanvasElement({ 
   element, 

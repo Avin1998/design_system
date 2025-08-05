@@ -1,6 +1,5 @@
 import React from 'react';
 import Icon from './Icon';
-import './Rating.css';
 
 export default function Rating({ value = 0, difficulty = 'medium', achieved = false, ...props }) {
   const stars = [];

@@ -1,5 +1,4 @@
 import React from 'react';
-import './ConnectionLine.css';
 
 export default function ConnectionLine({ 
   from, 

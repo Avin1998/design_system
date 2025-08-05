@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import QuestionCard from '../molecules/QuestionCard';
 import ProgressBar from '../atoms/ProgressBar';
 import { brainStates } from '../../data/brainSegments';
-import './QuestionCardStack.css';
 
 export default function QuestionCardStack({
   questions = [],

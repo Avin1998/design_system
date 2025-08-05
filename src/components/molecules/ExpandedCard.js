@@ -2,7 +2,6 @@ import React from 'react';
 import Button from '../atoms/Button';
 import Rating from '../atoms/Rating';
 import Badge from '../atoms/Badge';
-import './ExpandedCard.css';
 
 export default function ExpandedCard({ 
   title, 

@@ -1,6 +1,5 @@
 import React from 'react';
 import Icon from '../atoms/Icon';
-import './MetricsCard.css';
 
 export default function MetricsCard({ 
   title, 

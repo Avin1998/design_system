@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import DraggableComponent from '../atoms/DraggableComponent';
 import { canvasComponents, componentCategories } from '../../data/canvasComponents';
-import './ComponentPalette.css';
 
 export default function ComponentPalette({ className = '' }) {
   const [selectedCategory, setSelectedCategory] = useState('All');

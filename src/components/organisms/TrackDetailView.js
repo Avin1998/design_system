@@ -3,7 +3,6 @@ import Button from '../atoms/Button';
 import Icon from '../atoms/Icon';
 import ProblemTable from '../molecules/ProblemTable';
 import MetricsCard from '../molecules/MetricsCard';
-import './TrackDetailView.css';
 
 const sampleProblems = [
   {

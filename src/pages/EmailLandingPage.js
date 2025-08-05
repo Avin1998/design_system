@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import EmailLandingSection from '../components/organisms/EmailLandingSection';
-import './EmailLandingPage.css';
 
 export default function EmailLandingPage() {
   const navigate = useNavigate();

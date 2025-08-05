@@ -1,7 +1,6 @@
 import React from 'react';
 import TextArea from '../atoms/TextArea';
 import HintDisplay from '../atoms/HintDisplay';
-import './RequirementQuestion.css';
 
 export default function RequirementQuestion({
   question,

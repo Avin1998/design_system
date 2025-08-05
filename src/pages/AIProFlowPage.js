@@ -7,7 +7,6 @@ import FileUpload from '../components/atoms/FileUpload';
 import LoadingSpinner from '../components/atoms/LoadingSpinner';
 import ProBadge from '../components/atoms/ProBadge';
 import Modal from '../components/atoms/Modal';
-import './AIProFlowPage.css';
 
 export default function AIProFlowPage() {
   const navigate = useNavigate();

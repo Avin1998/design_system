@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../atoms/Button';
 import Icon from '../atoms/Icon';
-import './CodeAttemptPage.css';
 
 const sampleProblem = {
   title: 'Two Sum',

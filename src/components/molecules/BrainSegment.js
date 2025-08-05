@@ -1,5 +1,4 @@
 import { brainStates } from '../../data/brainSegments';
-import './BrainSegment.css';
 
 export default function BrainSegment({
   segment,

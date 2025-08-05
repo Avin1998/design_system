@@ -3,7 +3,6 @@ import * as FaIcons from 'react-icons/fa';
 import * as FiIcons from 'react-icons/fi';
 import * as HiIcons from 'react-icons/hi';
 import * as MdIcons from 'react-icons/md';
-import './Icon.css';
 
 // Icon mapping for brain regions and system design concepts
 const iconMap = {
@@ -51,7 +50,16 @@ export default function Icon({
     IconComponent = FaIcons[name] || FiIcons[name] || HiIcons[name] || MdIcons[name] || FiIcons.FiHelpCircle;
   }
   
-  const iconClasses = `icon icon-${variant} ${className}`;
+  const variantClasses = {
+    default: '',
+    status: 'text-green-500',
+    inactive: 'text-gray-500',
+    active: 'text-blue-primary',
+    danger: 'text-red-500',
+    warning: 'text-yellow-500',
+  };
+  
+  const iconClasses = `${variantClasses[variant] || ''} ${className}`.trim();
   const iconStyle = color ? { color } : {};
   
   return (

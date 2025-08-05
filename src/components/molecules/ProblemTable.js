@@ -2,7 +2,6 @@ import React from 'react';
 import Button from '../atoms/Button';
 import Badge from '../atoms/Badge';
 import Icon from '../atoms/Icon';
-import './ProblemTable.css';
 
 export default function ProblemTable({ problems = [], onAttempt, ...props }) {
   return (

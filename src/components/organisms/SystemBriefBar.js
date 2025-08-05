@@ -3,7 +3,6 @@ import Icon from '../atoms/Icon';
 import Badge from '../atoms/Badge';
 import Button from '../atoms/Button';
 import Tooltip from '../atoms/Tooltip';
-import './SystemBriefBar.css';
 
 export default function SystemBriefBar({
   trackName = '',

@@ -5,7 +5,6 @@ import Button from '../components/atoms/Button';
 import RequirementQuestion from '../components/molecules/RequirementQuestion';
 import { systemDesignTracks } from '../data/systemDesignTracks';
 import { systemDesignQuestions } from '../data/systemDesignQuestions';
-import './SystemDesignRequirementsPage.css';
 
 export default function SystemDesignRequirementsPageOld() {
   const { trackId } = useParams();

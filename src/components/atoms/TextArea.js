@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { FiMic, FiMicOff } from 'react-icons/fi';
-import './TextArea.css';
 
 export default function TextArea({ 
   placeholder, 

@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './RichTextEditor.css';
 
 export default function RichTextEditor({ 
   value = '', 

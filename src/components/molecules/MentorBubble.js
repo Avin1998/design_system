@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Icon from '../atoms/Icon';
 import Button from '../atoms/Button';
-import './MentorBubble.css';
 
 export default function MentorBubble({
   isVisible = true,

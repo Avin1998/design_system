@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import EmailComposer from '../components/molecules/EmailComposer';
 import Button from '../components/atoms/Button';
 import Container from '../components/atoms/Container';
-import './GmailComposerPage.css';
 
 export default function GmailComposerPage() {
   const navigate = useNavigate();

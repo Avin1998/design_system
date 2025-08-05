@@ -5,7 +5,6 @@ import Badge from '../atoms/Badge';
 import Icon from '../atoms/Icon';
 import Tooltip from '../atoms/Tooltip';
 import { brainStates } from '../../data/brainSegments';
-import './QuestionCard.css';
 
 export default function QuestionCard({
   question,

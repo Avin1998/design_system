@@ -3,7 +3,6 @@ import InputField from '../atoms/InputField';
 import RichTextEditor from '../atoms/RichTextEditor';
 import FileUpload from '../atoms/FileUpload';
 import Button from '../atoms/Button';
-import './EmailComposer.css';
 
 export default function EmailComposer({ 
   to = '',
