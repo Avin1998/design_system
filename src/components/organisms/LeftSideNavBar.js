@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import NavItem from '../molecules/NavItem';
-import './LeftSideNavBar.css';
 
 const navigationItems = [
   { id: 'home', icon: 'FaHome', label: 'Home', path: '/' },
@@ -37,15 +36,28 @@ export default function LeftSideNavBar({ ...props }) {
   };
 
   return (
-    <nav className="left-sidebar" {...props}>
-      <div className="nav-items">
+    <nav 
+      className="fixed left-0 top-0 w-20 h-full bg-nav-bg border-r border-white/10 flex flex-col items-center py-4 z-[1000]" 
+      {...props}
+    >
+      <div className="flex flex-col gap-2 w-full">
         {navigationItems.map(item => (
-          <div key={item.id} className="nav-item-wrapper" data-tooltip={item.label}>
+          <div 
+            key={item.id} 
+            className="relative group w-full flex justify-center"
+            title={item.label}
+          >
             <NavItem
               icon={item.icon}
               active={active === item.id}
               onClick={() => handleItemClick(item)}
             />
+            {/* Tooltip */}
+            <div className="absolute left-full ml-2 px-2 py-1 bg-gray-900 text-white text-xs rounded 
+                           opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none
+                           whitespace-nowrap z-50">
+              {item.label}
+            </div>
           </div>
         ))}
       </div>

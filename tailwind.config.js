@@ -38,6 +38,7 @@ export default {
       },
       animation: {
         'pro-glow': 'proGlow 2s ease-in-out infinite alternate',
+        'shimmer': 'shimmer 2s infinite',
       },
       keyframes: {
         proGlow: {
@@ -48,6 +49,14 @@ export default {
           '100%': {
             opacity: '1',
             transform: 'scale(1.1)',
+          },
+        },
+        shimmer: {
+          '0%': {
+            transform: 'translateX(-100%) skewX(-12deg)',
+          },
+          '100%': {
+            transform: 'translateX(200%) skewX(-12deg)',
           },
         },
       },

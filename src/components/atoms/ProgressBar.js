@@ -1,6 +1,5 @@
 
 import React from 'react';
-import './ProgressBar.css';
 
 export default function ProgressBar({ 
   progress = 0, 
@@ -16,9 +15,8 @@ export default function ProgressBar({
   const progressValue = progress !== undefined ? progress : (percent || 0);
   
   const progressBarClasses = `
-    progress-bar 
-    ${showGlow ? 'progress-glow' : ''} 
-    ${animated ? 'progress-animated' : ''} 
+    relative w-full bg-gray-700/50 rounded-full overflow-hidden
+    ${showGlow ? 'shadow-[0_0_8px_rgba(79,156,249,0.6)]' : ''} 
     ${className}
   `.trim();
 
@@ -33,18 +31,18 @@ export default function ProgressBar({
 
   return (
     <div className={progressBarClasses} style={barStyle}>
-      <div className="progress-bar-track">
+      <div className="w-full h-full bg-gray-700/50 rounded-full relative overflow-hidden">
         <div 
-          className="progress-bar-fill" 
+          className="h-full transition-all duration-500 ease-out rounded-full relative overflow-hidden" 
           style={fillStyle}
         >
           {animated && (
-            <div className="progress-bar-shine" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[shimmer_2s_infinite] transform -skew-x-12" />
           )}
         </div>
       </div>
       {showText && (
-        <div className="progress-text">
+        <div className="absolute right-0 top-0 text-xs text-gray-300 font-medium">
           {Math.round(progressValue)}%
         </div>
       )}

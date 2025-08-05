@@ -3,7 +3,6 @@ import React from 'react';
 import Card from '../molecules/Card';
 import ExpandedCardInline from '../molecules/ExpandedCardInline';
 import CardCarousel from '../molecules/CardCarousel';
-import './CardGrid.css';
 
 export default function CardGrid({ items, onCardClick, activeCards = [], onContinue, onCloseCard }) {
   // Separate active and inactive cards
@@ -16,10 +15,10 @@ export default function CardGrid({ items, onCardClick, activeCards = [], onConti
   const secondaryActiveCards = activeCards.slice(1);
   
   return (
-    <div className="card-grid-container">
+    <div className="space-y-6">
       {/* Top row: Primary active card (expanded) */}
       {primaryActiveCard && (
-        <div className="active-card-row">
+        <div className="mb-6">
           <ExpandedCardInline
             {...primaryActiveCard}
             onContinue={() => onContinue(primaryActiveCard)}
@@ -30,7 +29,7 @@ export default function CardGrid({ items, onCardClick, activeCards = [], onConti
       
       {/* Second row: Carousel for additional active cards */}
       {secondaryActiveCards.length > 0 && (
-        <div className="carousel-row">
+        <div className="mb-6">
           <CardCarousel
             items={secondaryActiveCards}
             onCardClick={onCardClick}
@@ -41,7 +40,7 @@ export default function CardGrid({ items, onCardClick, activeCards = [], onConti
       )}
       
       {/* Regular grid for inactive cards */}
-      <div className="grid">
+      <div className="grid-layout">
         {inactiveCards.map((item, i) => (
           <Card
             key={i}
