@@ -1,0 +1,83 @@
+.connection-line {
+  pointer-events: auto;
+}
+
+.connection-path {
+  stroke: rgba(79, 156, 249, 0.8);
+  stroke-width: 2;
+  fill: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.connection-path:hover {
+  stroke: rgb(79, 156, 249);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 4px rgba(79, 156, 249, 0.5));
+}
+
+.connection-clickable {
+  stroke: transparent;
+  stroke-width: 12;
+  fill: none;
+  cursor: pointer;
+}
+
+.connection-line.selected .connection-path {
+  stroke: rgb(79, 156, 249);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 6px rgba(79, 156, 249, 0.7));
+  animation: connectionGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes connectionGlow {
+  0% {
+    filter: drop-shadow(0 0 6px rgba(79, 156, 249, 0.7));
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgba(79, 156, 249, 0.9));
+  }
+}
+
+.connection-label {
+  fill: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+
+.connection-delete-btn {
+  fill: #ff4757;
+  stroke: #ffffff;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.connection-delete-btn:hover {
+  fill: #ff3742;
+  transform: scale(1.1);
+}
+
+.connection-delete-text {
+  fill: white;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Arrow marker styles */
+.connection-line polygon {
+  transition: all 0.2s ease;
+}
+
+.connection-line:hover polygon {
+  fill: rgb(79, 156, 249);
+}
+
+.connection-line.selected polygon {
+  fill: rgb(79, 156, 249);
+}

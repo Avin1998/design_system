@@ -1,0 +1,36 @@
+{
+  "name": "@avinash_tyagi/design-system-components",
+  "version": "1.0.1",
+  "description": "A collection of reusable design system components.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "design-system",
+    "components",
+    "ui"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/preset-react": "^7.27.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "rollup": "^3.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
+  }
+}

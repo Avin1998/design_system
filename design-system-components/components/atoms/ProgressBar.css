@@ -1,0 +1,135 @@
+
+.progress-bar {
+  position: relative;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4f9cf9, #6ba6f5);
+  border-radius: inherit;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated shine effect */
+.progress-bar-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: progressShine 2s ease-in-out infinite;
+}
+
+.progress-animated .progress-bar-shine {
+  animation-duration: 2s;
+}
+
+/* Glow effect */
+.progress-glow .progress-bar-fill {
+  box-shadow: 0 0 8px rgba(79, 156, 249, 0.6);
+  filter: drop-shadow(0 0 4px rgba(79, 156, 249, 0.4));
+}
+
+.progress-glow .progress-bar-track {
+  background: rgba(79, 156, 249, 0.1);
+  border: 1px solid rgba(79, 156, 249, 0.2);
+}
+
+/* Progress text */
+.progress-text {
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  font-size: 10px;
+  font-weight: 600;
+  color: #eee;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+/* Color variants */
+.progress-bar[data-variant="success"] .progress-bar-fill {
+  background: linear-gradient(90deg, #00c853, #4caf50);
+}
+
+.progress-bar[data-variant="warning"] .progress-bar-fill {
+  background: linear-gradient(90deg, #ffd966, #ffeb3b);
+}
+
+.progress-bar[data-variant="danger"] .progress-bar-fill {
+  background: linear-gradient(90deg, #ff6f61, #f44336);
+}
+
+/* Pulsing effect for active progress */
+.progress-bar.active .progress-bar-fill {
+  animation: progressPulse 1.5s ease-in-out infinite;
+}
+
+/* Indeterminate progress */
+.progress-bar.indeterminate .progress-bar-fill {
+  width: 30% !important;
+  animation: progressIndeterminate 1.5s linear infinite;
+}
+
+/* Size variants */
+.progress-bar.small {
+  height: 4px;
+}
+
+.progress-bar.large {
+  height: 10px;
+}
+
+/* Animations */
+@keyframes progressShine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes progressPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes progressIndeterminate {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .progress-text {
+    font-size: 9px;
+    right: 4px;
+  }
+}

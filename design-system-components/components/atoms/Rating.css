@@ -1,0 +1,28 @@
+.rating {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.rating-star {
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.rating-star.filled.medium {
+  color: #ffd966;
+}
+
+.rating-star.filled.hard {
+  color: #ff6f61;
+}
+
+.rating-star.achieved {
+  filter: drop-shadow(0 0 8px currentColor);
+  animation: starGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes starGlow {
+  0% { filter: drop-shadow(0 0 5px currentColor); }
+  100% { filter: drop-shadow(0 0 12px currentColor); }
+}

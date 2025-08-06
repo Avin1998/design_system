@@ -1,0 +1,101 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #eee;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon:hover {
+  color: #0066ff;
+  filter: drop-shadow(0 0 5px rgba(0, 102, 255, 0.6));
+}
+
+.icon.active {
+  color: #0066ff;
+  filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.8));
+}
+
+/* New variant styles */
+.icon-default {
+  color: #66b3ff;
+}
+
+.icon-brain {
+  color: #4f9cf9;
+  filter: drop-shadow(0 0 4px rgba(79, 156, 249, 0.3));
+}
+
+.icon-brain:hover {
+  color: #6ba6f5;
+  filter: drop-shadow(0 0 8px rgba(107, 166, 245, 0.5));
+  transform: scale(1.1);
+}
+
+.icon-status {
+  transition: all 0.2s ease;
+}
+
+.icon-status.completed {
+  color: #00c853;
+  filter: drop-shadow(0 0 4px rgba(0, 200, 83, 0.4));
+}
+
+.icon-status.active {
+  color: #ffd966;
+  filter: drop-shadow(0 0 4px rgba(255, 217, 102, 0.4));
+  animation: pulse 2s infinite;
+}
+
+.icon-status.inactive {
+  color: #666;
+  opacity: 0.5;
+}
+
+.icon-mentor {
+  color: #66b3ff;
+  background: rgba(102, 179, 255, 0.1);
+  border-radius: 50%;
+  padding: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.icon-mentor:hover {
+  background: rgba(102, 179, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.icon-hint {
+  color: #ffd966;
+  transition: all 0.3s ease;
+}
+
+.icon-hint:hover {
+  color: #ffeb3b;
+  filter: drop-shadow(0 0 6px rgba(255, 217, 102, 0.6));
+  transform: rotate(10deg) scale(1.1);
+}
+
+.icon-interactive {
+  cursor: pointer;
+  user-select: none;
+}
+
+.icon-interactive:hover {
+  transform: scale(1.1);
+}
+
+.icon-interactive:active {
+  transform: scale(0.95);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
