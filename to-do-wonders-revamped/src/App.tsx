@@ -7,7 +7,8 @@ import {
   TrackDetailPage, 
   SystemDesignPage,
   SystemDesignRequirementsPage,
-  AIProFlowPage
+  AIProFlowPage,
+  CodeAttemptPageContainer
 } from './pages';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/system-design" element={<SystemDesignPage />} />
           <Route path="/system-design/track/:trackId" element={<SystemDesignRequirementsPage />} />
           <Route path="/ai-pro-flow" element={<AIProFlowPage />} />
+          <Route path="/code-attempt/:problemId" element={<CodeAttemptPageContainer />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </MainLayout>
