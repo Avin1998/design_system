@@ -33,7 +33,7 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div
-      className="relative rounded-xl overflow-hidden shadow-lg h-80 bg-gray-800 cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl group"
+      className="card h-80 cursor-pointer group"
       onClick={onClick}
     >
       {/* Top section with image */}

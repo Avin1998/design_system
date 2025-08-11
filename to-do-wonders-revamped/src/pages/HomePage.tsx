@@ -109,20 +109,22 @@ export default function HomePage() {
   };
 
   return (
-    <div className="container mx-auto px-4">
-      <Header 
-        title="Coding Patterns" 
-        search={search} 
-        onSearchChange={(e) => setSearch(e.target.value)} 
-        onAddTrack={() => alert('Add track')} 
-      />
-      <CardGrid 
-        items={filtered} 
-        onCardClick={handleCardClick}
-        activeCards={activeCards}
-        onContinue={handleContinue}
-        onCloseCard={handleCloseCard}
-      />
+    <div className="min-h-screen bg-gray-900 text-white">
+      <div className="container mx-auto px-4">
+        <Header 
+          title="Coding Patterns" 
+          search={search} 
+          onSearchChange={(e) => setSearch(e.target.value)} 
+          onAddTrack={() => alert('Add track')} 
+        />
+        <CardGrid 
+          items={filtered} 
+          onCardClick={handleCardClick}
+          activeCards={activeCards}
+          onContinue={handleContinue}
+          onCloseCard={handleCloseCard}
+        />
+      </div>
     </div>
   );
 }
