@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Input, Badge } from '../components/atoms';
-import { Card, MetricsCard } from '../components/molecules';
+import { MetricsCard } from '../components/molecules';
 
 // Sample system design topics
 const systemDesignTopics = [

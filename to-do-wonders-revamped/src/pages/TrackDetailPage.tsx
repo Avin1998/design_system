@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { useParams, useNavigate } from 'react-router-dom';
 import { Button, ProgressBar, Badge } from '../components/atoms';
-import { Card, ProblemTable } from '../components/molecules';
+import { ProblemTable } from '../components/molecules';
 
 const trackNames: Record<string, string> = {
   'two-pointers': 'Two Pointers Pattern',

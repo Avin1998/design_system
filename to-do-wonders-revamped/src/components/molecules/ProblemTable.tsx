@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 interface ProblemData {
   id: string;
@@ -23,12 +23,6 @@ export default function ProblemTable({
     easy: 'text-green-400',
     medium: 'text-yellow-400',
     hard: 'text-red-400'
-  };
-
-  const statusColors = {
-    solved: 'text-green-400',
-    attempted: 'text-yellow-400',
-    unsolved: 'text-gray-400'
   };
 
   return (

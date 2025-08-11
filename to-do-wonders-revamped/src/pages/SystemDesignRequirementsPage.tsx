@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Button, TextArea, ProgressBar } from '../components/atoms';
+import { Button, ProgressBar } from '../components/atoms';
 import { QuestionCard } from '../components/molecules';
 
 const systemDesignQuestions = [

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { Header } from '../components/molecules';
 import { CardGrid } from '../components/organisms';
+import type { PatternStatus } from '../constants';
 
 // Sample pattern data - in real app this would come from API
 const patterns = [
@@ -10,63 +10,62 @@ const patterns = [
     name: 'Two Pointers',
     image: '/images/two_pointers.png',
     progress: 1,
-    status: 'done',
+    status: 'done' as PatternStatus,
   },
   {
     id: 'island',
     name: 'Island (Matrix Traversal)',
     image: '/images/island.png',
     progress: 1,
-    status: 'active',
+    status: 'active' as PatternStatus,
   },
   {
     id: 'fast-slow',
     name: 'Fast & Slow Pointers',
     image: '/images/fast_slow_pointers.png',
     progress: 1,
-    status: 'inactive',
+    status: 'inactive' as PatternStatus,
   },
   {
     id: 'sliding-window',
     name: 'Sliding Window',
     image: '/images/sliding_window.png',
     progress: 0.7,
-    status: 'active',
+    status: 'active' as PatternStatus,
   },
   {
     id: 'merge-intervals',
     name: 'Merge Intervals',
     image: '/images/merge_intervals.png',
     progress: 0.3,
-    status: 'inactive',
+    status: 'inactive' as PatternStatus,
   },
   {
     id: 'cyclic-sort',
     name: 'Cyclic Sort',
     image: '/images/cyclic_sort.png',
     progress: 0,
-    status: 'inactive',
+    status: 'inactive' as PatternStatus,
   },
   {
     id: 'linked-list-reversal',
     name: 'In-place Reversal of LinkedList',
     image: '/images/linked_list_reversal.png',
     progress: 0,
-    status: 'inactive',
+    status: 'inactive' as PatternStatus,
   },
   {
     id: 'tree-bfs',
     name: 'Tree BFS',
     image: '/images/tree_bfs.png',
     progress: 0,
-    status: 'inactive',
+    status: 'inactive' as PatternStatus,
   },
 ];
 
 export default function HomePage() {
   const [search, setSearch] = useState('');
   const [activeCards, setActiveCards] = useState<any[]>([]);
-  const navigate = useNavigate();
   
   const filtered = patterns.filter(p => 
     p.name.toLowerCase().includes(search.toLowerCase())
@@ -99,14 +98,6 @@ export default function HomePage() {
       setActiveCards([expandedCardData, ...activeCards]);
     }
   };
-  
-  const handleContinue = (card: any) => {
-    navigate(`/track/${card.id}`);
-  };
-  
-  const handleCloseCard = (cardId: string) => {
-    setActiveCards(activeCards.filter(card => card.id !== cardId));
-  };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -120,9 +111,6 @@ export default function HomePage() {
         <CardGrid 
           items={filtered} 
           onCardClick={handleCardClick}
-          activeCards={activeCards}
-          onContinue={handleContinue}
-          onCloseCard={handleCloseCard}
         />
       </div>
     </div>

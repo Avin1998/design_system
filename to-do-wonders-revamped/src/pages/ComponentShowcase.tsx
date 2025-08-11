@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   Icon, 
   Badge, 
@@ -14,7 +14,6 @@ import {
 } from '../components/atoms';
 import { 
   MetricsCard, 
-  Card, 
   ProfileMenu,
   NavItem,
   ProblemTable 
@@ -22,7 +21,7 @@ import {
 
 export default function ComponentShowcase() {
   const [activeDemo, setActiveDemo] = useState('atoms');
-  const [rating, setRating] = useState(4);
+  const [rating] = useState(4);
   const [inputValue, setInputValue] = useState('');
   const [textAreaValue, setTextAreaValue] = useState('');
   const [showModal, setShowModal] = useState(false);
@@ -76,7 +75,6 @@ export default function ComponentShowcase() {
               <h4 className="text-white text-lg font-semibold">Interactive Rating</h4>
               <Rating 
                 value={rating} 
-                onChange={setRating}
                 className="mb-4"
               />
               <p className="text-gray-300">Current rating: {rating}</p>

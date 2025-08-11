@@ -6,12 +6,14 @@ export interface RatingProps {
   value?: number;
   difficulty?: DifficultyLevel;
   achieved?: boolean;
+  className?: string;
 }
 
 const Rating: React.FC<RatingProps> = ({ 
   value = 0, 
   difficulty = 'medium', 
-  achieved = false, 
+  achieved = false,
+  className = '',
   ...props 
 }) => {
   const stars = [];
@@ -42,7 +44,7 @@ const Rating: React.FC<RatingProps> = ({
   }
 
   return (
-    <div className="flex items-center gap-0.5" {...props}>
+    <div className={`flex items-center gap-0.5 ${className}`} {...props}>
       {stars}
     </div>
   );

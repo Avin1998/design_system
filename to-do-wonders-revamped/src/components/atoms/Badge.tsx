@@ -1,11 +1,10 @@
-import React from 'react';
 import Icon from './Icon';
 
 export interface BadgeProps {
   children: React.ReactNode;
   variant?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'danger';
   glow?: boolean;
-  icon?: React.ReactNode;
+  icon?: string;
   status?: 'completed' | 'in-progress' | 'pending' | 'error' | 'active' | 'inactive' | 'done';
   className?: string;
 }

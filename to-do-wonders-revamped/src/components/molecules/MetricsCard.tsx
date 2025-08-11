@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Icon } from '../atoms';
 
 interface Trend {
@@ -10,7 +10,7 @@ interface MetricsCardProps {
   title: string;
   value: string | number;
   icon?: string;
-  trend?: Trend;
+  trend?: Trend | null;
   color?: string;
   [key: string]: any;
 }
@@ -35,7 +35,7 @@ export default function MetricsCard({
             name={icon} 
             size={20} 
             className="text-gray-400"
-            style={{ color }}
+            color={color}
           />
         )}
         <span className="text-gray-300 font-medium">{title}</span>

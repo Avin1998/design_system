@@ -1,5 +1,6 @@
-import React from 'react';
+
 import { Card } from '../molecules';
+import type { PatternStatus } from '../../constants';
 
 interface CardCarouselProps {
   cards: Array<{
@@ -25,9 +26,11 @@ export default function CardCarousel({
         {cards.map((card) => (
           <div key={card.id} className="flex-shrink-0 w-80">
             <Card
-              {...card}
+              title={card.title}
+              progress={card.progress || 0}
+              status={(card.status as PatternStatus) || 'inactive'}
+              image={card.image}
               onClick={() => onCardClick?.(card)}
-              className="h-full"
             />
           </div>
         ))}

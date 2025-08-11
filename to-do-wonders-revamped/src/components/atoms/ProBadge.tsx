@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 type ProBadgeSize = 'small' | 'medium' | 'large';
 type ProBadgePosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';

@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 export interface ProgressBarProps {
   progress?: number;
@@ -27,11 +27,12 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
 
   return (
     <div className="flex items-center gap-2">
-      <div className={`progress-bar ${className}`} style={{ height: `${height}px` }}>
+      <div className={`progress-bar ${showGlow ? 'glow' : ''} ${animated ? 'animated' : ''} ${className}`} style={{ height: `${height}px` }}>
         <div 
           className="progress-fill"
           style={{ 
-            width: `${widthPercentage}%`
+            width: `${widthPercentage}%`,
+            backgroundColor: color
           }}
         />
       </div>

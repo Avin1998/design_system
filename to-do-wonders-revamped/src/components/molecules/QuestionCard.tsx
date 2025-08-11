@@ -107,7 +107,7 @@ export default function QuestionCard({
               rows={state === 'active' ? 8 : 4}
               maxLength={2000}
               enableSpeechToText={true}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
             />
           </div>
 
