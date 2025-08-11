@@ -7,6 +7,8 @@ import {
   TrackDetailPage, 
   SystemDesignPage,
   SystemDesignRequirementsPage,
+  SystemDesignCanvasPage,
+  SystemDesignRequirementsPageBackup,
   AIProFlowPage,
   CodeAttemptPageContainer,
   EmailLandingPage,
@@ -19,14 +21,16 @@ function App() {
       <MainLayout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/showcase" element={<ComponentShowcase />} />
-          <Route path="/track/:trackId" element={<TrackDetailPage />} />
           <Route path="/system-design" element={<SystemDesignPage />} />
           <Route path="/system-design/track/:trackId" element={<SystemDesignRequirementsPage />} />
-          <Route path="/ai-pro-flow" element={<AIProFlowPage />} />
-          <Route path="/code-attempt/:problemId" element={<CodeAttemptPageContainer />} />
+          <Route path="/system-design/canvas/:trackId" element={<SystemDesignCanvasPage />} />
+          <Route path="/system-design/requirements-backup/:trackId" element={<SystemDesignRequirementsPageBackup />} />
+          <Route path="/showcase" element={<ComponentShowcase />} />
+          <Route path="/track/:trackId" element={<TrackDetailPage />} />
+          <Route path="/problem/:problemId" element={<CodeAttemptPageContainer />} />
           <Route path="/email" element={<EmailLandingPage />} />
           <Route path="/email/gmail-composer" element={<GmailComposerPage />} />
+          <Route path="/email/ai-pro-flow" element={<AIProFlowPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </MainLayout>
