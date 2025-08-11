@@ -1,11 +1,22 @@
 export { default as Badge } from './Badge';
 export { default as Button } from './Button';
+export { default as CanvasElement } from './CanvasElement';
+export { default as ConnectionLine } from './ConnectionLine';
 export { default as Container } from './Container';
+export { default as DraggableComponent } from './DraggableComponent';
+export { default as FileUpload } from './FileUpload';
+export { default as HintDisplay } from './HintDisplay';
 export { default as Icon } from './Icon';
 export { default as Input } from './Input';
+export { default as InputField } from './InputField';
+export { default as LoadingSpinner } from './LoadingSpinner';
 export { default as Modal } from './Modal';
+export { default as ProBadge } from './ProBadge';
 export { default as ProgressBar } from './ProgressBar';
 export { default as Rating } from './Rating';
+export { default as RichTextEditor } from './RichTextEditor';
+export { default as TextArea } from './TextArea';
+export { default as Tooltip } from './Tooltip';
 
 export type { BadgeProps } from './Badge';
 export type { ButtonProps } from './Button';

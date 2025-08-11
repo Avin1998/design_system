@@ -2,6 +2,10 @@
 export const BUTTON_VARIANTS = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
+  SUCCESS: 'success',
+  DANGER: 'danger',
+  WARNING: 'warning',
+  GHOST: 'ghost',
   BACK: 'back',
   INTEGRATION: 'integration',
 } as const;

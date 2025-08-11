@@ -2,10 +2,10 @@ import React from 'react';
 
 export interface BadgeProps {
   children: React.ReactNode;
-  variant?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info';
+  variant?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'danger';
   glow?: boolean;
   icon?: React.ReactNode;
-  status?: 'completed' | 'in-progress' | 'pending' | 'error';
+  status?: 'completed' | 'in-progress' | 'pending' | 'error' | 'active' | 'inactive' | 'done';
   className?: string;
 }
 
