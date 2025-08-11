@@ -9,7 +9,8 @@ import {
   SystemDesignRequirementsPage,
   AIProFlowPage,
   CodeAttemptPageContainer,
-  EmailLandingPage
+  EmailLandingPage,
+  GmailComposerPage
 } from './pages';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/ai-pro-flow" element={<AIProFlowPage />} />
           <Route path="/code-attempt/:problemId" element={<CodeAttemptPageContainer />} />
           <Route path="/email" element={<EmailLandingPage />} />
+          <Route path="/email/gmail-composer" element={<GmailComposerPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </MainLayout>

@@ -8,6 +8,7 @@ export { default as ProblemTable } from './ProblemTable';
 export { default as ProfileMenu } from './ProfileMenu';
 export { default as QuestionCard } from './QuestionCard';
 export { default as EmailOptionCard } from './EmailOptionCard';
+export { default as EmailComposer } from './EmailComposer';
 
 export type { CardProps } from './Card';
 export type { ExpandedCardProps } from './ExpandedCard';

@@ -6,3 +6,4 @@ export { default as SystemDesignRequirementsPage } from './SystemDesignRequireme
 export { default as AIProFlowPage } from './AIProFlowPage';
 export { default as CodeAttemptPageContainer } from './CodeAttemptPageContainer';
 export { default as EmailLandingPage } from './EmailLandingPage';
+export { default as GmailComposerPage } from './GmailComposerPage';
