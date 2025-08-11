@@ -7,6 +7,7 @@ export { default as NavItem } from './NavItem';
 export { default as ProblemTable } from './ProblemTable';
 export { default as ProfileMenu } from './ProfileMenu';
 export { default as QuestionCard } from './QuestionCard';
+export { default as EmailOptionCard } from './EmailOptionCard';
 
 export type { CardProps } from './Card';
 export type { ExpandedCardProps } from './ExpandedCard';
