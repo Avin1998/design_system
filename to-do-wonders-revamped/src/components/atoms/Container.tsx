@@ -19,47 +19,25 @@ const Container: React.FC<ContainerProps> = ({
   centerContent = false,
   ...props 
 }) => {
-  const maxWidthClasses = {
-    default: 'max-w-6xl',
-    narrow: 'max-w-4xl',
-    wide: 'max-w-7xl',
-    full: 'max-w-none'
-  };
-
-  const paddingClasses = {
-    default: 'px-6 py-8',
-    compact: 'px-5 py-4',
-    spacious: 'px-8 py-12',
-    none: 'p-0'
-  };
-
-  const baseClasses = "w-full mx-auto box-border";
-  const contentClasses = centerContent ? "flex flex-col items-center text-center" : "";
-
-  const containerClasses = [
-    baseClasses,
-    maxWidthClasses[maxWidth],
-    paddingClasses[padding],
-    className
-  ].filter(Boolean).join(' ');
+  const containerClasses = `container container-${maxWidth} container-${padding} ${centerContent ? 'container-centered' : ''} ${className}`;
 
   return (
     <div className={containerClasses} {...props}>
       {(title || subtitle) && (
-        <div className="mb-8">
+        <div className="container-header">
           {title && (
-            <h1 className="text-2xl lg:text-3xl font-bold text-white mb-3 leading-tight tracking-tight">
+            <h1 className="container-title">
               {title}
             </h1>
           )}
           {subtitle && (
-            <p className="text-lg text-gray-300 leading-relaxed font-normal">
+            <p className="container-subtitle">
               {subtitle}
             </p>
           )}
         </div>
       )}
-      <div className={`space-y-6 ${contentClasses}`}>
+      <div className="container-content">
         {children}
       </div>
     </div>
