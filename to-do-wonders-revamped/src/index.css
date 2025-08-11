@@ -1,3 +1,7 @@
+/* Import component and page styles */
+@import './styles/components.css';
+@import './styles/pages.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
