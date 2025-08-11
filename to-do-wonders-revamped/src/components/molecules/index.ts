@@ -9,6 +9,8 @@ export { default as ProfileMenu } from './ProfileMenu';
 export { default as QuestionCard } from './QuestionCard';
 export { default as EmailOptionCard } from './EmailOptionCard';
 export { default as EmailComposer } from './EmailComposer';
+export { default as ComponentPalette } from './ComponentPalette';
+export { default as RequirementQuestion } from './RequirementQuestion';
 
 export type { CardProps } from './Card';
 export type { ExpandedCardProps } from './ExpandedCard';
