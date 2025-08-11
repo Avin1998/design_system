@@ -1,0 +1,96 @@
+/* Theme System using CSS Custom Properties */
+
+/* Default theme (dark) */
+:root {
+  /* Backgrounds */
+  --bg-primary: #0d0d17;
+  --bg-secondary: #1a1a2f;
+  --bg-tertiary: #1d1d2d;
+  --bg-card: #1a1a2f;
+  --bg-overlay: rgba(255, 255, 255, 0.07);
+  
+  /* Primary Brand Colors */
+  --color-primary: #0066ff;
+  --color-primary-hover: #0080ff;
+  --color-primary-dark: #003d99;
+  --color-primary-light: #66b3ff;
+  --color-primary-lighter: #80c7ff;
+  
+  /* Text Colors */
+  --text-primary: #eee;
+  --text-secondary: #b3b3b3;
+  --text-muted: #888;
+  
+  /* Border Colors */
+  --border-primary: #333;
+  --border-secondary: rgba(102, 179, 255, 0.3);
+  --border-accent: rgba(102, 179, 255, 0.2);
+  
+  /* Status Colors */
+  --color-success: #4caf50;
+  --color-success-hover: #66bb6a;
+  --color-error: #f44336;
+  --color-error-hover: #ef5350;
+  --color-warning: #ff9800;
+  --color-warning-hover: #ffb74d;
+  
+  /* Accent Colors */
+  --color-yellow: #ffd700;
+  --color-orange: #ffb347;
+  
+  /* Shadow Colors */
+  --shadow-primary: rgba(0, 102, 255, 0.3);
+  --shadow-primary-hover: rgba(0, 102, 255, 0.4);
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+  --shadow-darker: rgba(0, 0, 0, 0.8);
+}
+
+/* Light theme */
+:root[data-theme="light"] {
+  /* Backgrounds */
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #ECF4F3;
+  --bg-tertiary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.05);
+  
+  /* Primary Brand Colors */
+  --color-primary: #3A7CA5;
+  --color-primary-hover: #4F9EC4;
+  --color-primary-dark: #2C5F7F;
+  --color-primary-light: #5A8DB5;
+  --color-primary-lighter: #7AA3C5;
+  
+  /* Text Colors */
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  
+  /* Border Colors */
+  --border-primary: #CBD5E1;
+  --border-secondary: rgba(58, 124, 165, 0.3);
+  --border-accent: rgba(58, 124, 165, 0.2);
+  
+  /* Status Colors */
+  --color-success: #6BBF59;
+  --color-success-hover: #7BC969;
+  --color-error: #E76F51;
+  --color-error-hover: #EB7F61;
+  --color-warning: #FFD166;
+  --color-warning-hover: #FFD976;
+  
+  /* Accent Colors */
+  --color-yellow: #FFD166;
+  --color-orange: #F4976C;
+  
+  /* Shadow Colors */
+  --shadow-primary: rgba(58, 124, 165, 0.2);
+  --shadow-primary-hover: rgba(58, 124, 165, 0.3);
+  --shadow-dark: rgba(0, 0, 0, 0.1);
+  --shadow-darker: rgba(0, 0, 0, 0.15);
+}
+
+/* Transition for smooth theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}

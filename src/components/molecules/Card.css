@@ -3,16 +3,16 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 12px var(--shadow-dark);
   height: 340px;
-  background: #1a1a2f;
+  background: var(--bg-card);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.8);
+  box-shadow: 0 8px 24px var(--shadow-darker);
 }
 .card-top {
   position: relative;
@@ -46,7 +46,7 @@
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 35%;
-  background: rgba(255,255,255,0.07);
+  background: var(--bg-overlay);
   backdrop-filter: blur(10px);
   padding: 14px;
   display: flex;
@@ -59,9 +59,9 @@
 .status-label { font-size: 13px; font-weight: 500; }
 .progress-wrapper { flex: 1; }
 .card.inactive .card-top::before { filter: grayscale(100%) brightness(0.3); }
-.card.inactive .card-bottom { background: rgba(0,0,0,0.7); }
-.card.inactive .status-label { color: #ff6f61; }
-.card.active .status-label { color: #ffd966; }
-.card.done .status-label { color: #0066ff; }
+.card.inactive .card-bottom { background: var(--bg-secondary); }
+.card.inactive .status-label { color: var(--color-error); }
+.card.active .status-label { color: var(--color-warning); }
+.card.done .status-label { color: var(--color-primary); }
 .card.done .card-top::after { display: none; }
-.card.done { border: 2px solid #0066ff; box-shadow: 0 0 10px rgba(0,102,255,0.6); }
+.card.done { border: 2px solid var(--color-primary); box-shadow: 0 0 10px var(--shadow-primary); }

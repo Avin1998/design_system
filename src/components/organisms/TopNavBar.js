@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Icon from '../atoms/Icon';
 import ProfileMenu from '../molecules/ProfileMenu';
+import ThemeToggle from '../atoms/ThemeToggle';
 import './TopNavBar.css';
 
 const navigationButtons = [
@@ -64,6 +65,7 @@ export default function TopNavBar({
       </div>
       
       <div className="navbar-right">
+        <ThemeToggle className="compact" />
         <ProfileMenu 
           streak={streak} 
           notifications={notifications}
