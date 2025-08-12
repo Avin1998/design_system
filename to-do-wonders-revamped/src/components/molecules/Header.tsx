@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input, Button } from '../atoms';
+import './Header.css';
 
 export interface HeaderProps {
   title: string;
@@ -15,18 +16,17 @@ const Header: React.FC<HeaderProps> = ({
   onAddTrack 
 }) => {
   return (
-    <div className="flex items-center justify-between mb-8">
-      <h1 className="text-3xl font-bold text-white m-0">{title}</h1>
-      <div className="flex items-center gap-3">
+    <div className="header">
+      <h1>{title}</h1>
+      <div className="search-add">
         <Input 
           type="text" 
           placeholder="Search patterns..." 
           value={search} 
           onChange={onSearchChange}
-          className="w-64"
         />
         <Button variant="primary" onClick={onAddTrack}>
-          Add Track
+          ADD TRACK
         </Button>
       </div>
     </div>
