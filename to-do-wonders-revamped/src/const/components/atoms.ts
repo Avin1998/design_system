@@ -34,3 +34,7 @@ export const ICON_MAP: Record<string, React.ComponentType<any>> = {
 export const BADGE_VARIANTS = ['default', 'success', 'warning', 'danger'] as const;
 export const BADGE_STATUSES = ['completed', 'active', 'inactive', 'locked'] as const;
 export const ICON_VARIANTS = ['default', 'brain', 'status', 'mentor', 'hint', 'interactive'] as const;
+
+// Button variant types and states
+export const BUTTON_VARIANTS = ['primary', 'secondary', 'danger', 'outline', 'minimal', 'back', 'integration'] as const;
+export const BUTTON_STATES = ['default', 'connected', 'error'] as const;
