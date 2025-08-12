@@ -32,7 +32,7 @@ export const ICON_MAP: Record<string, React.ComponentType<any>> = {
 
 // Badge and Icon variant types
 export const BADGE_VARIANTS = ['default', 'success', 'warning', 'danger'] as const;
-export const BADGE_STATUSES = ['completed', 'active', 'inactive', 'locked'] as const;
+export const BADGE_STATUSES = ['default', 'success', 'warning', 'danger', 'completed', 'active', 'inactive', 'locked'] as const;
 export const ICON_VARIANTS = ['default', 'brain', 'status', 'mentor', 'hint', 'interactive'] as const;
 
 // Button variant types and states
