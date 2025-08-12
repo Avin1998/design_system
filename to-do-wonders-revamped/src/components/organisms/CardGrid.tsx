@@ -98,7 +98,7 @@ const CardGrid: React.FC<CardGridProps> = ({
               <div key={i} className="flex-none w-64">
                 <Card
                   title={card.name}
-                  description={`Learn the ${card.name} pattern for coding interviews.`}
+                  description={card.description || `Learn the ${card.name} pattern for coding interviews.`}
                   progress={card.progress ?? 0}
                   status={card.status || 'inactive'}
                   image={card.image}
@@ -116,7 +116,7 @@ const CardGrid: React.FC<CardGridProps> = ({
           <Card
             key={item.id || i}
             title={item.name}
-            description={`Learn the ${item.name} pattern for coding interviews.`}
+            description={item.description || `Learn the ${item.name} pattern for coding interviews.`}
             progress={item.progress ?? 0}
             status={item.status || 'inactive'}
             image={item.image}
