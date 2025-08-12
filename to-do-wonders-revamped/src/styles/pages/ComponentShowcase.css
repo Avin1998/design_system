@@ -1,0 +1,157 @@
+.component-showcase {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.showcase-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.showcase-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #eee;
+  margin: 0 0 12px 0;
+  background: linear-gradient(135deg, #0066ff, #006bbd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.showcase-header p {
+  font-size: 18px;
+  color: #aaa;
+  margin: 0;
+}
+
+.showcase-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.showcase-content {
+  animation: fadeIn 0.3s ease;
+}
+
+.showcase-content h2 {
+  font-size: 28px;
+  color: #eee;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.components-grid {
+  display: grid;
+  gap: 32px;
+}
+
+.component-demo {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.component-demo h3 {
+  font-size: 20px;
+  color: #eee;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+
+.demo-section h4 {
+  font-size: 16px;
+  color: #ccc;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+}
+
+/* Component specific grids */
+.icon-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.badge-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.progress-rating-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.progress-rating-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-rating-grid p {
+  margin: 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.form-grid {
+  display: grid;
+  gap: 20px;
+  max-width: 300px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .component-showcase {
+    padding: 20px;
+  }
+  
+  .showcase-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .metrics-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
