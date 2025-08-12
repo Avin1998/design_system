@@ -38,3 +38,7 @@ export const ICON_VARIANTS = ['default', 'brain', 'status', 'mentor', 'hint', 'i
 // Button variant types and states
 export const BUTTON_VARIANTS = ['primary', 'secondary', 'danger', 'outline', 'minimal', 'back', 'integration'] as const;
 export const BUTTON_STATES = ['default', 'connected', 'error'] as const;
+
+// Container variant types
+export const CONTAINER_MAX_WIDTHS = ['default', 'narrow', 'wide', 'full'] as const;
+export const CONTAINER_PADDINGS = ['default', 'compact', 'spacious', 'none'] as const;
