@@ -15,6 +15,7 @@
   --color-primary-dark: #003d99;
   --color-primary-light: #66b3ff;
   --color-primary-lighter: #80c7ff;
+  --color-primary-rgb: 0, 102, 255;
   
   /* Text Colors */
   --text-primary: #eee;
@@ -29,10 +30,13 @@
   /* Status Colors */
   --color-success: #4caf50;
   --color-success-hover: #66bb6a;
+  --color-success-rgb: 76, 175, 80;
   --color-error: #f44336;
   --color-error-hover: #ef5350;
+  --color-error-rgb: 244, 67, 54;
   --color-warning: #ff9800;
   --color-warning-hover: #ffb74d;
+  --color-warning-rgb: 255, 152, 0;
   
   /* Accent Colors */
   --color-yellow: #ffd700;
@@ -60,6 +64,7 @@
   --color-primary-dark: #2C5F7F;
   --color-primary-light: #5A8DB5;
   --color-primary-lighter: #7AA3C5;
+  --color-primary-rgb: 58, 124, 165;
   
   /* Text Colors */
   --text-primary: #1E293B;
@@ -74,10 +79,13 @@
   /* Status Colors */
   --color-success: #6BBF59;
   --color-success-hover: #7BC969;
+  --color-success-rgb: 107, 191, 89;
   --color-error: #E76F51;
   --color-error-hover: #EB7F61;
+  --color-error-rgb: 231, 111, 81;
   --color-warning: #FFD166;
   --color-warning-hover: #FFD976;
+  --color-warning-rgb: 255, 209, 102;
   
   /* Accent Colors */
   --color-yellow: #FFD166;

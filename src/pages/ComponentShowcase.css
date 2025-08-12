@@ -12,9 +12,9 @@
 .showcase-header h1 {
   font-size: 36px;
   font-weight: 700;
-  color: #eee;
+  color: var(--text-primary);
   margin: 0 0 12px 0;
-  background: linear-gradient(135deg, #0066ff, #006bbd);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -22,7 +22,7 @@
 
 .showcase-header p {
   font-size: 18px;
-  color: #aaa;
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -32,7 +32,7 @@
   gap: 16px;
   margin-bottom: 40px;
   padding: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-overlay);
   border-radius: 12px;
   backdrop-filter: blur(10px);
 }
@@ -41,7 +41,7 @@
   padding: 12px 24px;
   background: transparent;
   border: none;
-  color: #aaa;
+  color: var(--text-secondary);
   cursor: pointer;
   border-radius: 8px;
   font-weight: 500;
@@ -49,34 +49,34 @@
 }
 
 .nav-tab.active {
-  background: linear-gradient(135deg, #0066ff, #006bbd);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: white;
-  box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
+  box-shadow: 0 4px 16px var(--shadow-primary);
 }
 
 .nav-tab:hover:not(.active) {
-  background: rgba(255, 255, 255, 0.1);
-  color: #eee;
+  background: var(--bg-overlay);
+  color: var(--text-primary);
 }
 
 .showcase-content h2 {
   font-size: 28px;
-  color: #eee;
+  color: var(--text-primary);
   margin-bottom: 32px;
   text-align: center;
 }
 
 .component-demo {
-  background: #1a1a2f;
+  background: var(--bg-secondary);
   border-radius: 16px;
   padding: 32px;
   margin-bottom: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-primary);
 }
 
 .component-demo h3 {
   font-size: 20px;
-  color: #0066ff;
+  color: var(--color-primary);
   margin: 0 0 24px 0;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -85,7 +85,7 @@
 
 .demo-section h4 {
   font-size: 16px;
-  color: #eee;
+  color: var(--text-primary);
   margin: 0 0 16px 0;
 }
 
@@ -114,7 +114,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #eee;
+  color: var(--text-primary);
   font-size: 14px;
 }
 
@@ -136,9 +136,9 @@
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(0, 107, 189, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(0, 107, 189, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 107, 189, 0); }
+  0% { box-shadow: 0 0 0 0 var(--shadow-primary); }
+  70% { box-shadow: 0 0 0 10px rgba(var(--color-primary-rgb), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--color-primary-rgb), 0); }
 }
 
 .glow-card {
@@ -147,17 +147,17 @@
   align-items: center;
   gap: 12px;
   padding: 24px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-overlay);
   border-radius: 12px;
-  border: 1px solid rgba(0, 102, 255, 0.3);
-  color: #eee;
+  border: 1px solid var(--border-secondary);
+  color: var(--text-primary);
   text-align: center;
 }
 
 .rotating-icon {
-  color: #0066ff;
+  color: var(--color-primary);
   animation: rotate 3s linear infinite;
-  filter: drop-shadow(0 0 12px #0066ff);
+  filter: drop-shadow(0 0 12px var(--color-primary));
 }
 
 @keyframes rotate {
@@ -171,10 +171,10 @@
   align-items: center;
   gap: 12px;
   padding: 24px;
-  background: rgba(255, 152, 0, 0.1);
+  background: rgba(var(--color-warning-rgb), 0.1);
   border-radius: 12px;
-  border: 1px solid rgba(255, 152, 0, 0.3);
-  color: #ff9800;
+  border: 1px solid rgba(var(--color-warning-rgb), 0.3);
+  color: var(--color-warning);
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;

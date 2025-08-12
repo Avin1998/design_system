@@ -1,6 +1,6 @@
 .ai-pro-flow-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2f 100%);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   padding: 20px;
 }
 
@@ -39,16 +39,16 @@
 }
 
 .page-title {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 28px;
   font-weight: 600;
   margin: 0;
 }
 
 .step-indicator {
-  background: rgba(0, 102, 255, 0.15);
-  border: 1px solid rgba(0, 102, 255, 0.3);
-  color: #0066ff;
+  background: rgba(var(--color-primary-rgb), 0.15);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.3);
+  color: var(--color-primary);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 13px;
@@ -63,7 +63,7 @@
 .progress-bar {
   width: 100%;
   height: 4px;
-  background: #2d2d44;
+  background: var(--bg-tertiary);
   border-radius: 2px;
   margin-bottom: 32px;
   overflow: hidden;
@@ -71,17 +71,17 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #0066ff, #003d99);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
   transition: width 0.3s ease;
 }
 
 .step-content {
-  background: #1a1a2f;
-  border: 1px solid #2d2d44;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
   border-radius: 16px;
   padding: 32px;
   min-height: 400px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px var(--shadow-dark);
 }
 
 .step-header {
@@ -90,14 +90,14 @@
 }
 
 .step-title {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 24px;
   font-weight: 600;
   margin: 0 0 12px 0;
 }
 
 .step-description {
-  color: #ccc;
+  color: var(--text-secondary);
   font-size: 16px;
   margin: 0;
   line-height: 1.6;
@@ -107,12 +107,12 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(var(--color-error-rgb), 0.1);
+  border: 1px solid rgba(var(--color-error-rgb), 0.3);
   border-radius: 8px;
   padding: 12px 16px;
   margin-top: 16px;
-  color: #ef4444;
+  color: var(--color-error);
   font-size: 14px;
 }
 
@@ -133,8 +133,8 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  background: #16182a;
-  border: 1px solid #2d2d44;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
   border-radius: 12px;
   padding: 16px 24px;
 }
@@ -142,9 +142,9 @@
 .count-btn {
   width: 40px;
   height: 40px;
-  border: 1px solid #0066ff;
+  border: 1px solid var(--color-primary);
   background: transparent;
-  color: #0066ff;
+  color: var(--color-primary);
   border-radius: 8px;
   font-size: 20px;
   font-weight: 600;
@@ -153,8 +153,8 @@
 }
 
 .count-btn:hover:not(:disabled) {
-  background: #0066ff;
-  color: #fff;
+  background: var(--color-primary);
+  color: white;
 }
 
 .count-btn:disabled {
@@ -165,13 +165,13 @@
 .count-display {
   font-size: 32px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   min-width: 60px;
   text-align: center;
 }
 
 .count-label {
-  color: #ccc;
+  color: var(--text-secondary);
   font-size: 16px;
   font-weight: 500;
   margin: 0;
@@ -185,14 +185,14 @@
 }
 
 .recruiter-form-group {
-  background: #16182a;
-  border: 1px solid #2d2d44;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
   border-radius: 12px;
   padding: 20px;
 }
 
 .recruiter-label {
-  color: #0066ff;
+  color: var(--color-primary);
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 16px 0;
@@ -205,21 +205,21 @@
 }
 
 .resume-upload-section {
-  background: #16182a;
-  border: 1px solid #2d2d44;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
   border-radius: 12px;
   padding: 20px;
 }
 
 .resume-label {
-  color: #0066ff;
+  color: var(--color-primary);
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 16px 0;
 }
 
 .resume-upload-area {
-  border: 2px dashed #444;
+  border: 2px dashed var(--border-primary);
   border-radius: 8px;
   padding: 24px;
   text-align: center;
@@ -227,28 +227,28 @@
 }
 
 .resume-upload-area:hover {
-  border-color: #0066ff;
-  background: rgba(0, 102, 255, 0.05);
+  border-color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.05);
 }
 
 .resume-placeholder {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  color: #ccc;
+  color: var(--text-secondary);
   font-size: 14px;
 }
 
 .resume-placeholder .file-types {
   font-size: 12px;
-  color: #888;
+  color: var(--text-muted);
 }
 
 .resume-selected {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 14px;
 }
 
@@ -267,7 +267,7 @@
 }
 
 .loading-description {
-  color: #ccc;
+  color: var(--text-secondary);
   font-size: 16px;
   margin: 24px 0 0 0;
   max-width: 400px;
@@ -276,8 +276,8 @@
 
 /* Step 4: Email Results */
 .emails-table {
-  background: #16182a;
-  border: 1px solid #2d2d44;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 24px;
@@ -288,9 +288,9 @@
   grid-template-columns: 1fr 1fr 2fr 3fr 160px;
   gap: 16px;
   padding: 20px;
-  background: #2d2d44;
+  background: var(--bg-secondary);
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 14px;
 }
 
@@ -299,13 +299,13 @@
   grid-template-columns: 1fr 1fr 2fr 3fr 160px;
   gap: 16px;
   padding: 20px;
-  border-bottom: 1px solid #2d2d44;
+  border-bottom: 1px solid var(--border-primary);
   align-items: start;
   transition: all 0.2s ease;
 }
 
 .email-row:hover {
-  background: rgba(0, 102, 255, 0.05);
+  background: rgba(var(--color-primary-rgb), 0.05);
 }
 
 .email-row:last-child {
@@ -315,7 +315,7 @@
 .email-from,
 .email-to,
 .email-subject {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 14px;
   word-break: break-all;
   font-weight: 500;
@@ -326,7 +326,7 @@
 }
 
 .email-preview {
-  color: #ccc;
+  color: var(--text-secondary);
   font-size: 14px;
   line-height: 1.4;
 }
@@ -363,8 +363,8 @@
 }
 
 .email-meta {
-  background: #16182a;
-  border: 1px solid #2d2d44;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
   border-radius: 8px;
   padding: 16px;
 }
@@ -379,21 +379,21 @@
 }
 
 .meta-label {
-  color: #ccc;
+  color: var(--text-secondary);
   font-weight: 500;
   width: 80px;
   flex-shrink: 0;
 }
 
 .meta-value {
-  color: #fff;
+  color: var(--text-primary);
   flex: 1;
   word-break: break-all;
 }
 
 .email-body {
-  background: #16182a;
-  border: 1px solid #2d2d44;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
   border-radius: 8px;
   padding: 20px;
   max-height: 400px;
@@ -401,7 +401,7 @@
 }
 
 .email-body pre {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
@@ -415,7 +415,7 @@
   gap: 12px;
   justify-content: flex-end;
   padding-top: 16px;
-  border-top: 1px solid #2d2d44;
+  border-top: 1px solid var(--border-primary);
 }
 
 .step-actions {

@@ -48,8 +48,8 @@
   align-items: center;
   gap: 12px;
   padding: 32px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--border-primary);
+  background: var(--bg-overlay);
   border-radius: 16px;
   margin-top: 32px;
 }
@@ -68,7 +68,7 @@
 
 .continue-button:not(:disabled):hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(79, 156, 249, 0.4);
+  box-shadow: 0 8px 24px var(--shadow-primary-hover);
 }
 
 .continue-button:disabled {
@@ -88,10 +88,10 @@
 
 .completion-hint {
   font-size: 14px;
-  color: #aaa;
+  color: var(--text-secondary);
   text-align: center;
-  background: rgba(255, 217, 102, 0.1);
-  border: 1px solid rgba(255, 217, 102, 0.2);
+  background: rgba(var(--color-warning-rgb), 0.1);
+  border: 1px solid rgba(var(--color-warning-rgb), 0.2);
   border-radius: 8px;
   padding: 8px 16px;
 }
@@ -99,11 +99,11 @@
 /* Error State */
 .error-message {
   text-align: center;
-  color: #ff6b6b;
+  color: var(--color-error);
   font-size: 18px;
   padding: 40px;
-  background: rgba(255, 107, 107, 0.1);
-  border: 1px solid rgba(255, 107, 107, 0.3);
+  background: rgba(var(--color-error-rgb), 0.1);
+  border: 1px solid rgba(var(--color-error-rgb), 0.3);
   border-radius: 12px;
 }
 
@@ -212,7 +212,7 @@
 
 /* Focus management for accessibility */
 .requirements-page-redesigned:focus-within .requirements-main-layout {
-  outline: 2px solid rgba(79, 156, 249, 0.3);
+  outline: 2px solid var(--border-secondary);
   outline-offset: 4px;
   border-radius: 16px;
 }
@@ -220,11 +220,11 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .requirements-main-layout {
-    border: 2px solid #ffffff;
+    border: 2px solid var(--text-primary);
   }
   
   .continue-button {
-    border: 2px solid #ffffff;
+    border: 2px solid var(--text-primary);
   }
 }
 
