@@ -1,7 +1,7 @@
 // API endpoints for the design system
 export class DesignSystemAPI {
   // Mock API base URL - in real implementation this would be actual endpoints
-  private static readonly BASE_URL = '/api/v1';
+  // private static readonly BASE_URL = '/api/v1';
   
   // Simulate API delay
   private static delay(ms: number = 500): Promise<void> {
@@ -60,7 +60,7 @@ export class DesignSystemAPI {
   }
 
   // Update user progress API
-  static async updateUserProgress(userId: string, progressData: any) {
+  static async updateUserProgress(progressData: any) {
     await this.delay();
     return Promise.resolve({
       success: true,

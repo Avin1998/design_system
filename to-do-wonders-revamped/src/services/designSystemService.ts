@@ -88,9 +88,9 @@ export class DesignSystemService {
     }
   }
 
-  static async updateUserProgress(userId: string, progressData: any) {
+  static async updateUserProgress(progressData: any) {
     try {
-      const response = await DesignSystemAPI.updateUserProgress(userId, progressData);
+      const response = await DesignSystemAPI.updateUserProgress(progressData);
       if (response.success) {
         return response.data;
       }
