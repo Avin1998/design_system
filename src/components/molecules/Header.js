@@ -3,6 +3,7 @@ import React from 'react';
 import Input from '../atoms/Input';
 import Button from '../atoms/Button';
 import './Header.css';
+
 export default function Header({ title, search, onSearchChange, onAddTrack }) {
   return (
     <div className="header">

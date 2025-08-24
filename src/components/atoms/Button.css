@@ -11,20 +11,20 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #0066ff, #003d99);
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--text-primary);
+  box-shadow: 0 4px 12px var(--shadow-primary);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.4);
-  background: linear-gradient(135deg, #0080ff, #0052cc);
+  box-shadow: 0 8px 24px var(--shadow-primary-hover);
+  background: linear-gradient(135deg, var(--color-primary-hover), var(--color-primary));
 }
 
 .btn:active {
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.3);
+  box-shadow: 0 2px 8px var(--shadow-primary);
 }
 
 .btn::before {
@@ -43,19 +43,19 @@
 }
 
 .btn-primary { 
-  background: linear-gradient(135deg, #0066ff, #003d99);
-  border: 1px solid rgba(0, 102, 255, 0.3);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  border: 1px solid var(--border-secondary);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #0080ff, #0052cc);
-  border: 1px solid rgba(0, 128, 255, 0.5);
+  background: linear-gradient(135deg, var(--color-primary-hover), var(--color-primary));
+  border: 1px solid var(--color-primary-light);
 }
 
 /* New minimal flame-style buttons */
 .btn-minimal {
   background: transparent;
-  color: #66b3ff;
+  color: var(--color-primary-light);
   border: none;
   border-bottom: 2px solid transparent;
   border-radius: 0;
@@ -77,15 +77,15 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #0066ff, #66b3ff, #0066ff, transparent);
+  background: linear-gradient(90deg, transparent, var(--color-primary), var(--color-primary-light), var(--color-primary), transparent);
   transform: translateX(-50%);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 8px rgba(0, 102, 255, 0.6);
+  box-shadow: 0 0 8px var(--shadow-primary);
   border-radius: 2px;
 }
 
 .btn-minimal:hover {
-  color: #80c7ff;
+  color: var(--color-primary-lighter);
   transform: none;
   box-shadow: none;
   background: transparent;
@@ -93,7 +93,7 @@
 
 .btn-minimal:hover::after {
   width: 100%;
-  box-shadow: 0 0 12px rgba(0, 102, 255, 0.8), 0 0 20px rgba(102, 179, 255, 0.4);
+  box-shadow: 0 0 12px var(--shadow-primary-hover), 0 0 20px var(--shadow-primary);
 }
 
 .btn-minimal:active {
@@ -102,15 +102,15 @@
 
 .btn-secondary { 
   background: transparent;
-  color: #66b3ff;
-  border: 1px solid rgba(102, 179, 255, 0.3);
+  color: var(--color-primary-light);
+  border: 1px solid var(--border-accent);
   box-shadow: none;
 }
 
 .btn-secondary:hover {
-  background: rgba(102, 179, 255, 0.1);
-  border: 1px solid rgba(102, 179, 255, 0.5);
-  color: #80c7ff;
+  background: var(--bg-overlay);
+  border: 1px solid var(--border-secondary);
+  color: var(--color-primary-lighter);
   transform: none;
   box-shadow: none;
 }
@@ -120,13 +120,13 @@
 }
 
 .btn-danger {
-  background: linear-gradient(135deg, #ff3366, #cc1144);
-  border: 1px solid rgba(255, 51, 102, 0.3);
+  background: linear-gradient(135deg, var(--color-error), var(--color-error-hover));
+  border: 1px solid var(--color-error);
 }
 
 .btn-danger:hover {
-  background: linear-gradient(135deg, #ff4d7a, #e6205a);
-  border: 1px solid rgba(255, 77, 122, 0.5);
+  background: linear-gradient(135deg, var(--color-error-hover), var(--color-error));
+  border: 1px solid var(--color-error-hover);
 }
 
 .btn-outline {
